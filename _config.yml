@@ -1,4 +1,5 @@
 # Configurations
+theme: jekyll-theme-slate
 title: analys-liu的博客 # 网站的标题
 longtitle:        analys-liu的博客
 author:           analys-liu
