@@ -1,27 +1,56 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+# Configurations
+title:            Jekyll Gitbook
+longtitle:        Jekyll Gitbook
+author:           HE Tao
+email:            sighingnow@gmail.com
+description: >
+  Build Jekyll site with the GitBook style.
 
-# 以下为自定义的全局变量，可以在 HTML 文件中引用，
-# 比如代码：<h1>{{ site.title }}</h1> 
-# 将会展示为设定的值，也可以自行添加其他自定义全局变量。
+version:          1.0
+gitbook_version:  3.2.3
 
-theme: jekyll-theme-leap-day
+url:              'https://sighingnow.github.io'
+baseurl:          '/jekyll-gitbook'
+rss:              RSS
 
-title: analys-liu的博客 # 网站的标题
-description: > # 网站的描述，可能会出现在搜索引擎展示结果中
-  基于 jekyll 的 Github Pages 个人博客网站，技术的学习、总结、分享与提升
-url: "https://analy-liu.github.io/" # 网站地址
-github_repo: "https://github.com/analy-liu/analy-liu.github.io"
-github_profile: "https://github.com/analy-liu" # GitHub 个人主页
-user: "analy-liu" # 用于侧栏展示的名字
-user_email: "analysis.liu@qq.com" # 侧栏展示的联系方式
-paginate: 5 # 主页展示的博客文章数量
-nick_name: "analy-liu" # 昵称
-english_name: "analy-liu"
+toc:
+  enabled: true
+  h_min: 1
+  h_max: 3
+
+# markdown render engine.
+markdown:         kramdown
+kramdown:
+  auto_ids:               true
+  input:                  GFM
+  math_engine:            mathjax
+  smart_quotes:           lsquo,rsquo,ldquo,rdquo
+  toc_levels:             1..6
+  syntax_highlighter:     rouge
+  syntax_highlighter_opts:
+    guess_lang:           true
+
+syntax_highlighter_style: colorful
+
+markdown_ext:     markdown,mkdown,mkdn,mkd,md
+
+# Permalinks
+permalink:        /:categories/:year-:month-:day-:title:output_ext
+
+exclude:
+  - _drafts
+
+collections:
+  pages:
+    output: true
+    permalink: /:collection/:path/
+
+page_width: 800px
+
+destination:      ./_site
+incremental:      false
+regenerate:       true
+
+plugins:
+  - jekyll-feed
+  - jemoji
