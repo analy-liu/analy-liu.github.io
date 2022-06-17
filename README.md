@@ -1,37 +1,45 @@
-## Welcome to GitHub Pages
+# analy-liu的技术博客
 
-You can use the [editor on GitHub](https://github.com/analy-liu/analy-liu.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+带你从数据小白成长为数据分析师
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## 数据分析常用工具
 
-### Markdown
+工欲善其事，必先利其器。
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+想要高效的进行数据分析，一些工具的使用必不可少，python SQL PowerBI是目前数据分析的必备工具，三者的擅长的侧重点都不同
 
-```markdown
-Syntax highlighted code block
+### python
+擅长针对大量数据的预处理与使用算法
+[pandas学习笔记](https://analy-liu.github.io/2022/06/01/pandas-note)
 
-# Header 1
-## Header 2
-### Header 3
+### SQL
+使用数据库就必然会用到SQL，SQL俗称数据削笔刀，使用得当能大幅度提高数据获取效率
 
-- Bulleted
-- List
+### Power BI
+excel中就能直接使用，图形界面+代码结合的，使得完成一些临时任务时快捷方便，并且便于分享，透视表+度量值的功能使得分层分析十分方便
 
-1. Numbered
-2. List
+## 数据分析基础知识
+进行数据分析时，除了工具的使用，还需要统计学与数据挖掘的知识，了解这些基础知识才能更好的进行数据分析的工作
 
-**Bold** and _Italic_ and `Code` text
+### 应用统计
 
-[Link](url) and ![Image](src)
-```
+### 机器学习
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+## 数据分析阶段案例
+数据分析一共有三个阶段，上面的工具和知识将会在数据分析的各个阶段中综合运用
 
-### Jekyll Themes
+### 描述性分析
+数据分析最常用的分析方式，通常使用是对数据指标进行时间维度或者组织维度的对比分析，优秀的数据分析师能通过数据漏斗与数据对比快速用定位问题
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/analy-liu/analy-liu.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### 预测性分析
+预测性分析是高级分析的一个分支，将历史数据与统计建模、数据挖掘技术和 机器学习相结合，对未来结果进行预测，从而识别风险和商机。
 
-### Support or Contact
+### 规范性分析
+描述性分析显示已经发生的情况，预测性分析会尝试预测接下来可能发生的情况，规范性分析会根据类似情况利用数据信息（年度数据、季节性数据、产品发布数据）提供潜在的解决方案，以实现业务目标，比如提高客户满意度、增加利润和节省成本等。
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+## 其他计算机知识
+日常工作中，还需要了解一些其他的计算机知识
+
+### 程序算法
+
+### Linux 
