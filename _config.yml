@@ -1,16 +1,16 @@
 # Configurations
-title:            Jekyll Gitbook
-longtitle:        Jekyll Gitbook
-author:           HE Tao
-email:            sighingnow@gmail.com
+title: analys-liu的博客 # 网站的标题
+longtitle:        analys-liu的博客
+author:           analys-liu
+email:            analysis.liu@qq.com
 description: >
-  Build Jekyll site with the GitBook style.
+  基于 jekyll 的 Github Pages 个人博客网站，技术的学习、总结、分享与提升
 
 version:          1.0
 gitbook_version:  3.2.3
 
-url:              'https://sighingnow.github.io'
-baseurl:          '/jekyll-gitbook'
+url: "https://analy-liu.github.io/" # 网站地址
+baseurl:          '/analy-liu'
 rss:              RSS
 
 toc:
