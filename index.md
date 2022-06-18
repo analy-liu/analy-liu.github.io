@@ -2,124 +2,48 @@
 layout: default
 ---
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+# analy-liu的技术博客
 
-[Link to another page](./another-page.html).
+带你从数据小白成长为数据分析师
 
-[pandas 文章](./2022-06-01-pandas-note.html).
+## 数据分析常用工具
 
-There should be whitespace between paragraphs.
+工欲善其事，必先利其器。
 
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
+想要高效的进行数据分析，一些工具的使用必不可少，python SQL PowerBI是目前数据分析的必备工具，三者的擅长的侧重点都不同
 
-# Header 1
+### python
+擅长针对大量数据的预处理与使用算法
+[pandas学习笔记](./2022-06-01-pandas-note.html)
 
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+### SQL
+使用数据库就必然会用到SQL，SQL俗称数据削笔刀，使用得当能大幅度提高数据获取效率
 
-## Header 2
+### Power BI
+excel中就能直接使用，图形界面+代码结合的，使得完成一些临时任务时快捷方便，并且便于分享，透视表+度量值的功能使得分层分析十分方便
 
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
+## 数据分析基础知识
+进行数据分析时，除了工具的使用，还需要统计学与数据挖掘的知识，了解这些基础知识才能更好的进行数据分析的工作
 
-### Header 3
+### 应用统计
 
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
+### 机器学习
 
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
-```
+## 数据分析阶段案例
+数据分析一共有三个阶段，上面的工具和知识将会在数据分析的各个阶段中综合运用
 
-#### Header 4
+### 描述性分析
+数据分析最常用的分析方式，通常使用是对数据指标进行时间维度或者组织维度的对比分析，优秀的数据分析师能通过数据漏斗与数据对比快速用定位问题
 
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
+### 预测性分析
+预测性分析是高级分析的一个分支，将历史数据与统计建模、数据挖掘技术和 机器学习相结合，对未来结果进行预测，从而识别风险和商机。
 
-##### Header 5
+### 规范性分析
+描述性分析显示已经发生的情况，预测性分析会尝试预测接下来可能发生的情况，规范性分析会根据类似情况利用数据信息（年度数据、季节性数据、产品发布数据）提供潜在的解决方案，以实现业务目标，比如提高客户满意度、增加利润和节省成本等。
 
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
+## 其他计算机知识
+日常工作中，还需要了解一些其他的计算机知识
 
-###### Header 6
+### 程序算法
 
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
-
-* * *
-
-### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Small image
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
-
-
-### Definition lists can be used with HTML syntax.
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```
-The final element.
-```
+### Linux 
