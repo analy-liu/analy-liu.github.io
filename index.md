@@ -12,7 +12,7 @@ layout: default
 
 ### python
 擅长针对大量数据的预处理与使用算法
-[pandas学习笔记](./2022-06-01-pandas-note.html)
+[pandas学习笔记](./2022/06/01/pandas-note.html)
 
 ### SQL
 使用数据库就必然会用到SQL，SQL俗称数据削笔刀，使用得当能大幅度提高数据获取效率
