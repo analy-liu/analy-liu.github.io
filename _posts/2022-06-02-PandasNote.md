@@ -1,9 +1,6 @@
 ---
+title:  pandas note
 layout: default
-title: "pandas使用手册"
-categories: 数据分析工具
-tags: python
-excerpt:  pandas
 ---
 
 # python中pandas包使用笔记
