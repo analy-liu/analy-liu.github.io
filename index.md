@@ -16,7 +16,7 @@ layout: default
 
 擅长针对大量数据的预处理与使用算法，通常使用pandas这个包进行数据处理
 
-1. [pandas使用手册-总](./2022/06/01/pandas-note.html)
+1. [pandas使用手册-总](./2022/06/01/PandasNote.html)
 2. [pandas数据IO]
 
 ### 2. SQL
