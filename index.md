@@ -59,10 +59,16 @@ excel中就能直接使用，图形界面+代码结合的，使得完成一些�
 
 ## 四. 其他计算机知识
 
-<details><summary>日常工作中，还需要了解一些其他的计算机知识</summary>
+日常工作中，还需要了解一些其他的计算机知识
 
 ### 1. 程序算法
 
+<details>
+<summary>展开查看</summary>
+</details>
+
 ### 2. Linux 
 
+<details>
+<summary>展开查看</summary>
 </details>
