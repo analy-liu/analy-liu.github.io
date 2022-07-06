@@ -2,9 +2,7 @@
 title:  python目录
 layout: default
 ---
-
-[![返回](/assets/images/back.png)](../../../../)
-
+:back:(../../../../)
 # python
 
 ## python内置功能
