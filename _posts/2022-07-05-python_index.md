@@ -1,5 +1,5 @@
 ---
-title:  python index
+title:  python目录
 layout: default
 ---
 # python
