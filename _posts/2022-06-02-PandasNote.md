@@ -3,9 +3,9 @@ title:  pandas note
 layout: default
 ---
 
-# python中pandas包使用笔记
+[![返回](/assets/images/back.png)](../../../../)
 
-[back](./)
+# pandas使用笔记
 
 ## 1. 包导入
 
