@@ -282,7 +282,18 @@ header {
     display: block;
     background: url(../images/octocat-logo.svg);
   }
+
+  #home {
+    position:absolute;
+    height: 36px;
+    width: 36px;
+    right:7px;
+    top:7px;
+    display: block;
+    background: url(../images/home.svg);
+  }
 }
+
 
 section {
   width:590px;
