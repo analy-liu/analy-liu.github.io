@@ -2,7 +2,7 @@
 title:  python目录
 layout: default
 ---
-:back:(../../../../)
+[:back:](../../../../)
 # python
 
 ## python内置功能
