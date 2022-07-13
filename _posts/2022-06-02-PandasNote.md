@@ -2,7 +2,6 @@
 title:  pandas note
 layout: default
 ---
-[![返回](/assets/images/back.png)](../../../../)
 # pandas使用笔记
 
 ## 1. 包导入
