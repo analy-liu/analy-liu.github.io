@@ -24,14 +24,15 @@ python SQL PowerBI是目前数据分析的必备工具，三者的擅长的侧�
 
 这个工作流分别用到了各个工具的长处，提高工作效率
 
-### 1. [python](./2022/07/05/python_index.html)
+### 1. [python](./2022/07/05/Python_Index.html)
 
 python作为编程语言，可以实现各种功能，下面是数据分析各项步骤中通常使用的包
 
 1. 数据获取(requests seleniumwire)
 2. 数据清洗(pandas numpy)
-3. 数据可视化(matplotlib Pyecharts)
-4. 建模分析(sklearn)
+3. 数据透视与描述性分析
+4. 数据可视化(matplotlib Pyecharts)
+5. 建模分析(sklearn)
 
 ### 2. [SQL](./2022/06/01/SQL语法.html)
 
