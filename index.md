@@ -34,7 +34,7 @@ python作为编程语言，可以实现各种功能，下面是数据分析各�
 4. 数据可视化(matplotlib Pyecharts)
 5. 建模分析(sklearn)
 
-### 2. [SQL](./2022/06/01/SQL语法.html)
+### 2. [SQL](./2022/06/01/SQL_Index.html)
 
 使用数据库就必然会用到SQL，SQL俗称数据削笔刀，使用得当能大幅度提高数据获取效率
 
