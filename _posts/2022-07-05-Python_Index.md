@@ -11,7 +11,6 @@ layout: default
 - [ ] [pandas-数据获取与保存](../../../../2022/07/04/Python_Pandas_DataIO.html)
 - [ ] [常规爬虫requests-web数据获取]
 - [ ] [模拟用户seleniumwire-web数据获取]
-- [ ] [pymysql-数据库数据获取]
 - [ ] [内置函数-本地数据读取与保存]
 - [ ] [函数实现-腾讯文档爬虫]
 

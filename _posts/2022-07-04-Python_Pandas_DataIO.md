@@ -1,7 +1,213 @@
 ---
-title:  python数据获取与保存
+title:  pandas-数据获取与保存
 layout: default
 ---
-[![返回](/assets/images/back.png)](../../../../)
+[![返回](/assets/images/back.png)](../../../../2022/07/05/Python_Index.html)
 
-# 数据读取
+# pandas-数据获取与保存
+
+## 1. 包载入
+
+```python
+import pandas as pd
+import numpy as np
+```
+
+## 2. 数据读取
+1. 读取excel文件
+   ```python
+   # 读取 excel 文件
+   target_path = r'F:\data\test\中文路径\测试数据.xlsx'
+   sheet = 'Sheet1'
+   df = pd.read_excel(target_path, sheet_name=sheet)
+   ```
+
+   <details>
+   <summary>pd.read_excel更多参数</summary>
+   pd.read_excel(io, sheet_name=0, header=0, names=None, index_col=None, usecols=None, 
+                      squeeze=False, dtype=None, engine=None, converters=None, true_values=None, 
+                      false_values=None, skiprows=None, nrows=None,na_values=None, 
+                      keep_default_na=True, verbose=False, parse_dates=False, date_parser=None, 
+                      thousands=None, comment=None, skip_footer=0, skipfooter=0, convert_float=True, 
+                      mangle_dupe_cols=True, **kwds)
+
+   **参数**  
+   io ：文件路径url，例如：r'../data.xlsx'  
+   sheet_name ： 选择表，可按顺序012，可按表名"sheet"，设置None则读取全部工作表  
+   usecols ：选取表中具体列，默认None读取所有列，写法：[A,C] [A,C:E] [0,2] ["col1","col3"]  
+   header ：用于解析的列标签的行（索引为0，默认0）  
+   names ：表示自定义表头的名称，需要传递数组参数。["col1","col2"]  
+   dtype ：设置数据类型，例如：{'a': np.float64, 'b': np.int32}  
+   parse_dates ：指定将哪些列，解析为日期格式。写法：[0,1] ["col1","col3"]  
+   skiprows ：开头要跳过的行  
+   nrows ：要解析的行数  
+   na_values ：识别为NAN的字符，写法：["值1","值2"] {"列1":[”值1“,"值2"]}  
+   converters ：对某一列使用Lambda函数，进行某种运算，例如{"col":lambda x: x + 1000}  
+   </details>
+
+2. 读取csv文件
+   ```python
+   # 读取 csv 文件
+   ## 方式一
+   target_path = r'F:\data\test\中文路径\测试数据.csv'
+   df = pd.read_csv(target_path,sep=',')
+   ## 方式二
+   path = open(r'F:\data\test\中文路径\测试数据.csv')
+   # csv文件是gbk格式:open(r'.\文档\data.csv','rb')
+   pd.read_csv(path, sep='\t', skiprows=[0], nrows=0, na_values='1.#INF')
+   path.close
+   ```
+
+   <details>
+   <summary>pd.read_csv更多参数</summary>
+   pd.read_csv(filepath_or_buffer: Union[str, pathlib.Path, IO[~AnyStr]],
+   sep=',', delimiter=None, header='infer', names=None, index_col=None,
+   usecols=None, squeeze=False, prefix=None, mangle_dupe_cols=True,
+   dtype=None, engine=None, converters=None, true_values=None,
+   false_values=None, skipinitialspace=False, skiprows=None,
+   skipfooter=0, nrows=None, na_values=None, keep_default_na=True,
+   na_filter=True, verbose=False, skip_blank_lines=True,
+   parse_dates=False, infer_datetime_format=False,
+   keep_date_col=False, date_parser=None, dayfirst=False,
+   cache_dates=True, iterator=False, chunksize=None,
+   compression='infer', thousands=None, decimal: str = '.',
+   lineterminator=None, quotechar='"', quoting=0,
+   doublequote=True, escapechar=None, comment=None,
+   encoding=None, dialect=None, error_bad_lines=True,
+   warn_bad_lines=True, delim_whitespace=False,
+   low_memory=True, memory_map=False, float_precision=None)
+
+   |参数名|含义|输入|默认|pd.read_csv(用例)|注释|
+   |:-|:-|:-|:-|:-|:-|
+   |filepath<br>_or_buffer|文件路径|str|必填|(r'.\data.csv')|可以是url或本地路径|
+   |sep|指定分隔符|str|','|(./data.csv,<br> sep = '\t')|可用正则表达式|
+   |header|指定行作为表头<br>**数据开始**于下行|int or list[int]|'infer'|(./data.csv,<br>header = None)|数据中没有表头则需设置为None<br>默认会自动判断把第一行作为表头|
+   |names|设定列名|array-like|None|(./data.csv,<br>names = namelist)|没有表头时使用，同时设置header=None|
+   |dtype|每列数据的数据类型|str or dict|None|(./data.csv,<br>dtype = {'time': str, 'ID': int})||
+   |usecols|使用部分列|list[int] or list[str]|None|(./data.csv,<br>usecols=[0,4,3])|默认不按顺序，按顺序方法：(./data.csv, usecols=<br>lambda x: x.upper() in ['COL3','COL1'])|
+   |skiprows|跳过指定行|int list[int]|None|(./data.csv,<br>skiprows=range(2))|从文件头开始算起|
+   |skipfooter|尾部跳过|int list[int]|None|(./data.csv,<br>skipfooter=1)|用例为跳过最后一行<br>c引擎不支持|
+   |nrows|读取的行数|int|None|(./data.csv,<br>nrows=1000)|从文件头开始算起|
+   |true_values|真值转换|list|None|(./data.csv, true_values=['Yes'])||
+   |false_values|假值转换|list|None|(./data.csv, false_values=['No'])||
+   |na_values|空值替换|str<br>list<br>dict|None|(./data.csv,<br>na_values=["0"])|str: 'NA'<br>list: ["0","无"]<br>dict: {'col':0, 1:["无"]}指定列的指定值设NaN|
+   |keep_default_na|保留默认空值|bool|True|(./data.csv,<br>keep_default_na=False)|设定为False时<br>只依靠na_values判断空值|
+   |skip_blank_lines|跳过空行|bool|True|(./data.csv,<br>skip_blank_lines=False)|如果为True，则跳过空行；否则记为NaN。|
+   |parse_dates|日期时间解析|bool list dict|False|(./data.csv,<br>parse_dates=True)|指定日期时间字段进行解析:<br>parse_dates=['年份']<br>将1,4列合并为‘time’时间类型列<br>parse_dates={'time':[1,4]}|
+   |infer_datetime_format|自动识别日期时间|bool|False|(./data.csv,<br>parse_dates=True,<br>infer_datetime_format=True)|按用例方法，自动识别并解析，无需指定|
+   </details>
+
+3. 读取数据库文件
+   ```python
+   # 载入数据库包
+   import pymysql
+   # 建立数据库连接
+   con = pymysql.connect(host='数据库地址',user='账户名',password='密码', port=0000, charset='utf8')
+   cursor = con.cursor()
+   cursor.execute('USE {};'.format('数据库名称'))
+   # 编写sql
+   sql = """
+   SELECT * FROM 表名称;
+   """
+   # 读取数据
+   df = pd.read_sql(sql, con=con)
+
+   cursor.close() # 关闭光标
+   con.close() # 关闭连接对象，否则会导致连接泄漏，消耗数据库资源
+   ```
+   <details>
+   <summary>pd.read_sql更多参数</summary>
+   pd.read_sql(sql, con, index_col=None, coerce_float=True, params=None, parse_dates=None, columns=None, chunksize=None)  
+
+    **参数**  
+   sql, SQL查询语句
+   con, 数据库连接
+   index_col=None, string or list要设置为索引（多索引）的列
+   coerce_float=True, 尝试转换非字符串，非数字对象（例如十进制（Decimal.Decimal）到浮点数
+   params=None, 传递给执行方法的参数列表。
+   parse_dates=None, list or dict要解析为日期的列名列表。 
+   columns=None,  要从SQL表中选择的列名列表
+   chunksize=None, int如果指定，则返回一个迭代器，其中“ chunksize”为每个块中要包括的行数。 
+   </details>
+4. pd.read_总览
+   pd.read_csv(filename)： 从CSV文件导入数据
+   pd.read_excel(filename)： 从Excel文件导入数据
+   pd.read_table(filename)： 从限定分隔符的文本文件导入数据
+   pd.read_json(json_string)： 从JSON格式的字符串导入数据
+   pd.read_SQL(query, connection_object)： 从SQL表/库导入数据
+   pd.read_html(url)： 解析URL、字符串或者HTML文件
+   pd.read_clipboard()： 从粘贴板获取内容
+
+## 3. 数据构建
+```python
+# 生成dataframe
+# 方法一：从字典对象导入数据,字典keys是列名，对应的values是一列的值
+dict_ = {'字母':['A','B'],'数字':[1,2]}
+pd.DataFrame(dict_) 
+# 方法二：构建二维列表，内层列表里每个列表是一行
+Multi_list = [['A',1],['B',2]]
+columns = ['字母','数字']
+pd.DataFrame(data = Multi_list, columns = columns) 
+```
+
+## 4. 数据导出
+
+1. 导出到excel
+    ```python
+    # 更新excel指定sheet,删除原有数据加入新数据
+    def nb_to_excel(path, data, sheet_name, replace = True,index=False):
+        from openpyxl import load_workbook
+        # 保存新的数据
+        writer = pd.ExcelWriter(path, engine='openpyxl',mode='w')
+        book = load_workbook(writer.path)
+        writer.book = book
+        if replace:
+            # 清除原来的数据
+            idx = book.sheetnames.index(sheet_name)
+            book.remove(book.worksheets[idx])
+            book.create_sheet(sheet_name, idx)
+            writer.sheets = dict((ws.title, ws) for ws in book.worksheets)
+        # 保存文件
+        data.to_excel(excel_writer=writer, sheet_name=sheet_name,  index=index)
+        writer.save()
+    ```
+    ```python
+   target_path = r"F:\data\test\中文路径\测试数据.xlsx"
+   nb_to_excel(target_path, df,'Sheet1')
+    ```
+2. 导出到csv
+   <details>
+   <summary>展开查看</summary>
+   df.to_csv(path_or_buf=None, sep=', ', na_rep='', 
+   float_format=None, columns=None, 
+   header=True, index=True, index_label=None, mode='w', 
+   encoding=None, compression=None, 
+   quoting=None, quotechar='"', line_terminator='\n', 
+   chunksize=None, tupleize_cols=None, 
+   date_format=None, doublequote=True, escapechar=None, decimal='.')
+
+   |参数名|含义|输入|默认|注释|
+   |--|--|--|--|--|
+   |path_or_buf|导出路径|string or file handle|None|如果没有提供，结果将返回为字符串|
+   |sep|输出文件的字段分隔符|character|‘,’||
+   |columns|列顺序||None|可选列写入|
+   |index|是否输出index|boolean|True||
+   |encoding|编码格式|string|None|Python 3上默认为“UTF-8”|
+   |date_format|字符串对象转换为日期时间对象|string|None||
+   |decimal|字符识别为小数点分隔符|string|‘.’|欧洲数据使用 ​​’，’|
+   </details>
+3. 导出到数据库
+   <details>
+   <summary>展开查看</summary>
+   df.to_sql(name, con, schema=None, if_exists='fail', index=True, index_label=None, 
+             chunksize=None, dtype=None, method=None)
+   name, 表名
+   con, 数据库的连接
+   schema=None, 指定模式
+   if_exists='fail', 如果表已经存在{"fail":"引发ValueError","replace":"覆盖","append":"追加"}
+   index=True, 是否写入索引作为一列
+   index_label=None, 给出索引列
+   chunksize=None, int,每次写入行数，默认全部写入
+   dtype=None, dict,指定列的类型
+   method=None，导入方法{None, 'multi', callable}
+   </details>
