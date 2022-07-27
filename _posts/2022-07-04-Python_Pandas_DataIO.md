@@ -30,20 +30,20 @@ import numpy as np
                       false_values=None, skiprows=None, nrows=None,na_values=None, 
                       keep_default_na=True, verbose=False, parse_dates=False, date_parser=None, 
                       thousands=None, comment=None, skip_footer=0, skipfooter=0, convert_float=True, 
-                      mangle_dupe_cols=True, **kwds)
+                      mangle_dupe_cols=True, **kwds)<br>
 
-   **参数**  
-   io ：文件路径url，例如：r'../data.xlsx'  
-   sheet_name ： 选择表，可按顺序012，可按表名"sheet"，设置None则读取全部工作表  
-   usecols ：选取表中具体列，默认None读取所有列，写法：[A,C] [A,C:E] [0,2] ["col1","col3"]  
-   header ：用于解析的列标签的行（索引为0，默认0）  
-   names ：表示自定义表头的名称，需要传递数组参数。["col1","col2"]  
-   dtype ：设置数据类型，例如：{'a': np.float64, 'b': np.int32}  
-   parse_dates ：指定将哪些列，解析为日期格式。写法：[0,1] ["col1","col3"]  
-   skiprows ：开头要跳过的行  
-   nrows ：要解析的行数  
-   na_values ：识别为NAN的字符，写法：["值1","值2"] {"列1":[”值1“,"值2"]}  
-   converters ：对某一列使用Lambda函数，进行某种运算，例如{"col":lambda x: x + 1000}  
+   <b>参数</b>
+   io ：文件路径url，例如：r'../data.xlsx'  <br>
+   sheet_name ： 选择表，可按顺序012，可按表名"sheet"，设置None则读取全部工作表  <br>
+   usecols ：选取表中具体列，默认None读取所有列，写法：[A,C] [A,C:E] [0,2] ["col1","col3"]  <br>
+   header ：用于解析的列标签的行（索引为0，默认0）  <br>
+   names ：表示自定义表头的名称，需要传递数组参数。["col1","col2"]  <br>
+   dtype ：设置数据类型，例如：{'a': np.float64, 'b': np.int32}  <br>
+   parse_dates ：指定将哪些列，解析为日期格式。写法：[0,1] ["col1","col3"]  <br>
+   skiprows ：开头要跳过的行  <br>
+   nrows ：要解析的行数  <br>
+   na_values ：识别为NAN的字符，写法：["值1","值2"] {"列1":[”值1“,"值2"]}  <br>
+   converters ：对某一列使用Lambda函数，进行某种运算，例如{"col":lambda x: x + 1000}  <br>
    </p>
    </details>
 
