@@ -31,7 +31,6 @@ import numpy as np
                       keep_default_na=True, verbose=False, parse_dates=False, date_parser=None, 
                       thousands=None, comment=None, skip_footer=0, skipfooter=0, convert_float=True, 
                       mangle_dupe_cols=True, **kwds)<br>
-
    <b>参数</b><br>
    io ：文件路径url，例如：r'../data.xlsx'  <br>
    sheet_name ： 选择表，可按顺序012，可按表名"sheet"，设置None则读取全部工作表  <br>
@@ -127,8 +126,11 @@ import numpy as np
    </tr>
    <tr>
    <td>parse_dates</td><td>日期时间解析</td><td>bool list dict</td><td>False</td><td>(./data.csv,<br>parse_dates=True)</td><td>指定日期时间字段进行解析:<br>parse_dates=['年份']<br>将1,4列合并为‘time’时间类型列<br>parse_dates={'time':[1,4]}</td><td>
-   </td><td>infer_datetime_format</td><td>自动识别日期时间</td><td>bool</td><td>False</td><td>(./data.csv,<br>parse_dates=True,<br>infer_datetime_format=True)</td><td>按用例方法，自动识别并解析，无需指定</td>
    </tr>
+   <tr>
+   <td>infer_datetime_format</td><td>自动识别日期时间</td><td>bool</td><td>False</td><td>(./data.csv,<br>parse_dates=True,<br>infer_datetime_format=True)</td><td>按用例方法，自动识别并解析，无需指定</td>
+   </tr>
+   </table>
    </p>
    </details>
 
@@ -153,27 +155,26 @@ import numpy as np
    <details>
    <summary>点击查看pd.read_sql更多参数</summary>
    <p>
-   pd.read_sql(sql, con, index_col=None, coerce_float=True, params=None, parse_dates=None, columns=None, chunksize=None)  
-
-    **参数**  
-   sql, SQL查询语句
-   con, 数据库连接
-   index_col=None, string or list要设置为索引（多索引）的列
-   coerce_float=True, 尝试转换非字符串，非数字对象（例如十进制（Decimal.Decimal）到浮点数
-   params=None, 传递给执行方法的参数列表。
-   parse_dates=None, list or dict要解析为日期的列名列表。 
-   columns=None,  要从SQL表中选择的列名列表
-   chunksize=None, int如果指定，则返回一个迭代器，其中“ chunksize”为每个块中要包括的行数。 
+   pd.read_sql(sql, con, index_col=None, coerce_float=True, params=None, parse_dates=None, columns=None, chunksize=None)  <br>
+    <b>参数</b>  <br>
+   sql, SQL查询语句<br>
+   con, 数据库连接<br>
+   index_col=None, string or list要设置为索引（多索引）的列<br>
+   coerce_float=True, 尝试转换非字符串，非数字对象（例如十进<br>制（Decimal.Decimal）到浮点数
+   params=None, 传递给执行方法的参数列表。<br>
+   parse_dates=None, list or dict要解析为日期的列名列表。 <br>
+   columns=None,  要从SQL表中选择的列名列表<br>
+   chunksize=None, int如果指定，则返回一个迭代器，其中“ <br>chunksize”为每个块中要包括的行数。 <br>
    </p>
    </details>
 4. pd.read_总览
-   pd.read_csv(filename)： 从CSV文件导入数据
-   pd.read_excel(filename)： 从Excel文件导入数据
-   pd.read_table(filename)： 从限定分隔符的文本文件导入数据
-   pd.read_json(json_string)： 从JSON格式的字符串导入数据
-   pd.read_SQL(query, connection_object)： 从SQL表/库导入数据
-   pd.read_html(url)： 解析URL、字符串或者HTML文件
-   pd.read_clipboard()： 从粘贴板获取内容
+   pd.read_csv(filename)： 从CSV文件导入数据  
+   pd.read_excel(filename)： 从Excel文件导入数据  
+   pd.read_table(filename)： 从限定分隔符的文本文件导入数据  
+   pd.read_json(json_string)： 从JSON格式的字符串导入数据  
+   pd.read_SQL(query, connection_object)： 从SQL表/库导入数据  
+   pd.read_html(url)： 解析URL、字符串或者HTML文件  
+   pd.read_clipboard()： 从粘贴板获取内容  
 
 ## 3. 数据构建
 ```python
@@ -222,17 +223,81 @@ pd.DataFrame(data = Multi_list, columns = columns)
    encoding=None, compression=None, 
    quoting=None, quotechar='"', line_terminator='\n', 
    chunksize=None, tupleize_cols=None, 
-   date_format=None, doublequote=True, escapechar=None, decimal='.')
-
-   |参数名|含义|输入|默认|注释|
-   |--|--|--|--|--|
-   |path_or_buf|导出路径|string or file handle|None|如果没有提供，结果将返回为字符串|
-   |sep|输出文件的字段分隔符|character|‘,’||
-   |columns|列顺序||None|可选列写入|
-   |index|是否输出index|boolean|True||
-   |encoding|编码格式|string|None|Python 3上默认为“UTF-8”|
-   |date_format|字符串对象转换为日期时间对象|string|None||
-   |decimal|字符识别为小数点分隔符|string|‘.’|欧洲数据使用 ​​’，’|
+   date_format=None, doublequote=True, escapechar=None, decimal='.')<br>
+   <table>
+     <tr>
+       <td></td>
+       <td>参数名</td>
+       <td>含义</td>
+       <td>输入</td>
+       <td>默认</td>
+       <td>注释</td>
+       <td></td>
+     </tr>
+     <tr>
+       <td></td>
+       <td>path_or_buf</td>
+       <td>导出路径</td>
+       <td>string or file handle</td>
+       <td>None</td>
+       <td>如果没有提供，结果将返回为字符串</td>
+       <td></td>
+     </tr>
+     <tr>
+       <td></td>
+       <td>sep</td>
+       <td>输出文件的字段分隔符</td>
+       <td>character</td>
+       <td>‘,’</td>
+       <td></td>
+       <td></td>
+     </tr>
+     <tr>
+       <td></td>
+       <td>columns</td>
+       <td>列顺序</td>
+       <td></td>
+       <td>None</td>
+       <td>可选列写入</td>
+       <td></td>
+     </tr>
+     <tr>
+       <td></td>
+       <td>index</td>
+       <td>是否输出index</td>
+       <td>boolean</td>
+       <td>True</td>
+       <td></td>
+       <td></td>
+     </tr>
+     <tr>
+       <td></td>
+       <td>encoding</td>
+       <td>编码格式</td>
+       <td>string</td>
+       <td>None</td>
+       <td>Python 3上默认为“UTF-8”</td>
+       <td></td>
+     </tr>
+     <tr>
+       <td></td>
+       <td>date_format</td>
+       <td>字符串对象转换为日期时间对象</td>
+       <td>string</td>
+       <td>None</td>
+       <td></td>
+       <td></td>
+     </tr>
+     <tr>
+       <td></td>
+       <td>decimal</td>
+       <td>字符识别为小数点分隔符</td>
+       <td>string</td>
+       <td>‘.’</td>
+       <td>欧洲数据使用 ​​’，’</td>
+       <td></td>
+     </tr>
+   </table>
    </p>
    </details>
 3. 导出到数据库
@@ -240,15 +305,16 @@ pd.DataFrame(data = Multi_list, columns = columns)
    <summary>点击展开查看</summary>
    <p>
    df.to_sql(name, con, schema=None, if_exists='fail', index=True, index_label=None, 
-             chunksize=None, dtype=None, method=None)
-   name, 表名
-   con, 数据库的连接
-   schema=None, 指定模式
-   if_exists='fail', 如果表已经存在{"fail":"引发ValueError","replace":"覆盖","append":"追加"}
-   index=True, 是否写入索引作为一列
-   index_label=None, 给出索引列
-   chunksize=None, int,每次写入行数，默认全部写入
-   dtype=None, dict,指定列的类型
-   method=None，导入方法{None, 'multi', callable}
+             chunksize=None, dtype=None, method=None)<br>
+    <b>参数</b><br>
+   name, 表名<br>
+   con, 数据库的连接<br>
+   schema=None, 指定模式<br>
+   if_exists='fail', 如果表已经存在{"fail":"引发ValueError","replace":"覆盖","append":"追加"}<br>
+   index=True, 是否写入索引作为一列<br>
+   index_label=None, 给出索引列<br>
+   chunksize=None, int,每次写入行数，默认全部写入<br>
+   dtype=None, dict,指定列的类型<br>
+   method=None，导入方法{None, 'multi', callable}<br>
    </p>
    </details>
