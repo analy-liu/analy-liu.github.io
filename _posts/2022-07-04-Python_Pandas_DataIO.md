@@ -80,174 +80,174 @@ import numpy as np
    low_memory=True, memory_map=False, float_precision=None)<br>
    <table>
      <tr>
-       <td></td>
+       
        <td>参数名</td>
        <td>含义</td>
        <td>输入</td>
        <td>默认</td>
        <td>pd.read_csv(用例)</td>
        <td>注释</td>
-       <td></td>
+       
      </tr>
      <tr>
-       <td></td>
+       
        <td>filepath<br>_or_buffer</td>
        <td>文件路径</td>
        <td>str</td>
        <td>必填</td>
        <td>(r'.\data.csv')</td>
        <td>可以是url或本地路径</td>
-       <td></td>
+       
      </tr>
      <tr>
-       <td></td>
+       
        <td>sep</td>
        <td>指定分隔符</td>
        <td>str</td>
        <td>','</td>
        <td>(./data.csv,<br> sep = '\t')</td>
        <td>可用正则表达式</td>
-       <td></td>
+       
      </tr>
      <tr>
-       <td></td>
+       
        <td>header</td>
        <td>指定行作为表头<br>**数据开始**于下行</td>
        <td>int or list[int]</td>
        <td>'infer'</td>
        <td>(./data.csv,<br>header = None)</td>
        <td>数据中没有表头则需设置为None<br>默认会自动判断把第一行作为表头</td>
-       <td></td>
+       
      </tr>
      <tr>
-       <td></td>
+       
        <td>names</td>
        <td>设定列名</td>
        <td>array-like</td>
        <td>None</td>
        <td>(./data.csv,<br>names = namelist)</td>
        <td>没有表头时使用，同时设置header=None</td>
-       <td></td>
+       
      </tr>
      <tr>
-       <td></td>
+       
        <td>dtype</td>
        <td>每列数据的数据类型</td>
        <td>str or dict</td>
        <td>None</td>
        <td>(./data.csv,<br>dtype = {'time': str, 'ID': int})</td>
-       <td></td>
-       <td></td>
+       
+       
      </tr>
      <tr>
-       <td></td>
+       
        <td>usecols</td>
        <td>使用部分列</td>
        <td>list[int] or list[str]</td>
        <td>None</td>
        <td>(./data.csv,<br>usecols=[0,4,3])</td>
        <td>默认不按顺序，按顺序方法：(./data.csv, usecols=<br>lambda x: x.upper() in ['COL3','COL1'])</td>
-       <td></td>
+       
      </tr>
      <tr>
-       <td></td>
+       
        <td>skiprows</td>
        <td>跳过指定行</td>
        <td>int list[int]</td>
        <td>None</td>
        <td>(./data.csv,<br>skiprows=range(2))</td>
        <td>从文件头开始算起</td>
-       <td></td>
+       
      </tr>
      <tr>
-       <td></td>
+       
        <td>skipfooter</td>
        <td>尾部跳过</td>
        <td>int list[int]</td>
        <td>None</td>
        <td>(./data.csv,<br>skipfooter=1)</td>
        <td>用例为跳过最后一行<br>c引擎不支持</td>
-       <td></td>
+       
      </tr>
      <tr>
-       <td></td>
+       
        <td>nrows</td>
        <td>读取的行数</td>
        <td>int</td>
        <td>None</td>
        <td>(./data.csv,<br>nrows=1000)</td>
        <td>从文件头开始算起</td>
-       <td></td>
+       
      </tr>
      <tr>
-       <td></td>
+       
        <td>true_values</td>
        <td>真值转换</td>
        <td>list</td>
        <td>None</td>
        <td>(./data.csv, true_values=['Yes'])</td>
-       <td></td>
-       <td></td>
+       
+       
      </tr>
      <tr>
-       <td></td>
+       
        <td>false_values</td>
        <td>假值转换</td>
        <td>list</td>
        <td>None</td>
        <td>(./data.csv, false_values=['No'])</td>
-       <td></td>
-       <td></td>
+       
+       
      </tr>
      <tr>
-       <td></td>
+       
        <td>na_values</td>
        <td>空值替换</td>
        <td>str<br>list<br>dict</td>
        <td>None</td>
        <td>(./data.csv,<br>na_values=["0"])</td>
        <td>str: 'NA'<br>list: ["0","无"]<br>dict: {'col':0, 1:["无"]}指定列的指定值设NaN</td>
-       <td></td>
+       
      </tr>
      <tr>
-       <td></td>
+       
        <td>keep_default_na</td>
        <td>保留默认空值</td>
        <td>bool</td>
        <td>True</td>
        <td>(./data.csv,<br>keep_default_na=False)</td>
        <td>设定为False时<br>只依靠na_values判断空值</td>
-       <td></td>
+       
      </tr>
      <tr>
-       <td></td>
+       
        <td>skip_blank_lines</td>
        <td>跳过空行</td>
        <td>bool</td>
        <td>True</td>
        <td>(./data.csv,<br>skip_blank_lines=False)</td>
        <td>如果为True，则跳过空行；否则记为NaN。</td>
-       <td></td>
+       
      </tr>
      <tr>
-       <td></td>
+       
        <td>parse_dates</td>
        <td>日期时间解析</td>
        <td>bool list dict</td>
        <td>False</td>
        <td>(./data.csv,<br>parse_dates=True)</td>
        <td>指定日期时间字段进行解析:<br>parse_dates=['年份']<br>将1,4列合并为‘time’时间类型列<br>parse_dates={'time':[1,4]}</td>
-       <td></td>
+       
      </tr>
      <tr>
-       <td></td>
+       
        <td>infer_datetime_format</td>
        <td>自动识别日期时间</td>
        <td>bool</td>
        <td>False</td>
        <td>(./data.csv,<br>parse_dates=True,<br>infer_datetime_format=True)</td>
        <td>按用例方法，自动识别并解析，无需指定</td>
-       <td></td>
+       
      </tr>
    </table>
    </p>
@@ -345,76 +345,76 @@ pd.DataFrame(data = Multi_list, columns = columns)
    date_format=None, doublequote=True, escapechar=None, decimal='.')<br>
    <table>
      <tr>
-       <td></td>
+       
        <td>参数名</td>
        <td>含义</td>
        <td>输入</td>
        <td>默认</td>
        <td>注释</td>
-       <td></td>
+       
      </tr>
      <tr>
-       <td></td>
+       
        <td>path_or_buf</td>
        <td>导出路径</td>
        <td>string or file handle</td>
        <td>None</td>
        <td>如果没有提供，结果将返回为字符串</td>
-       <td></td>
+       
      </tr>
      <tr>
-       <td></td>
+       
        <td>sep</td>
        <td>输出文件的字段分隔符</td>
        <td>character</td>
        <td>‘,’</td>
-       <td></td>
-       <td></td>
+       
+       
      </tr>
      <tr>
-       <td></td>
+       
        <td>columns</td>
        <td>列顺序</td>
-       <td></td>
+       
        <td>None</td>
        <td>可选列写入</td>
-       <td></td>
+       
      </tr>
      <tr>
-       <td></td>
+       
        <td>index</td>
        <td>是否输出index</td>
        <td>boolean</td>
        <td>True</td>
-       <td></td>
-       <td></td>
+       
+       
      </tr>
      <tr>
-       <td></td>
+       
        <td>encoding</td>
        <td>编码格式</td>
        <td>string</td>
        <td>None</td>
        <td>Python 3上默认为“UTF-8”</td>
-       <td></td>
+       
      </tr>
      <tr>
-       <td></td>
+       
        <td>date_format</td>
        <td>字符串对象转换为日期时间对象</td>
        <td>string</td>
        <td>None</td>
-       <td></td>
-       <td></td>
+       
+       
      </tr>
      <tr>
-       <td></td>
+       
        <td>decimal</td>
        <td>字符识别为小数点分隔符</td>
        <td>string</td>
        <td>‘.’</td>
        <td>欧洲数据使用 ​​’，’</td>
-       <td></td>
+       
      </tr>
    </table>
    </p>
