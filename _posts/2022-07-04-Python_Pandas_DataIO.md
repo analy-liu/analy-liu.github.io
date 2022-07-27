@@ -32,7 +32,7 @@ import numpy as np
                       thousands=None, comment=None, skip_footer=0, skipfooter=0, convert_float=True, 
                       mangle_dupe_cols=True, **kwds)<br>
 
-   <b>参数</b>
+   <b>参数</b><br>
    io ：文件路径url，例如：r'../data.xlsx'  <br>
    sheet_name ： 选择表，可按顺序012，可按表名"sheet"，设置None则读取全部工作表  <br>
    usecols ：选取表中具体列，默认None读取所有列，写法：[A,C] [A,C:E] [0,2] ["col1","col3"]  <br>
@@ -78,26 +78,57 @@ import numpy as np
    doublequote=True, escapechar=None, comment=None,
    encoding=None, dialect=None, error_bad_lines=True,
    warn_bad_lines=True, delim_whitespace=False,
-   low_memory=True, memory_map=False, float_precision=None)
-
-   |参数名|含义|输入|默认|pd.read_csv(用例)|注释|
-   |:-|:-|:-|:-|:-|:-|
-   |filepath<br>_or_buffer|文件路径|str|必填|(r'.\data.csv')|可以是url或本地路径|
-   |sep|指定分隔符|str|','|(./data.csv,<br> sep = '\t')|可用正则表达式|
-   |header|指定行作为表头<br>**数据开始**于下行|int or list[int]|'infer'|(./data.csv,<br>header = None)|数据中没有表头则需设置为None<br>默认会自动判断把第一行作为表头|
-   |names|设定列名|array-like|None|(./data.csv,<br>names = namelist)|没有表头时使用，同时设置header=None|
-   |dtype|每列数据的数据类型|str or dict|None|(./data.csv,<br>dtype = {'time': str, 'ID': int})||
-   |usecols|使用部分列|list[int] or list[str]|None|(./data.csv,<br>usecols=[0,4,3])|默认不按顺序，按顺序方法：(./data.csv, usecols=<br>lambda x: x.upper() in ['COL3','COL1'])|
-   |skiprows|跳过指定行|int list[int]|None|(./data.csv,<br>skiprows=range(2))|从文件头开始算起|
-   |skipfooter|尾部跳过|int list[int]|None|(./data.csv,<br>skipfooter=1)|用例为跳过最后一行<br>c引擎不支持|
-   |nrows|读取的行数|int|None|(./data.csv,<br>nrows=1000)|从文件头开始算起|
-   |true_values|真值转换|list|None|(./data.csv, true_values=['Yes'])||
-   |false_values|假值转换|list|None|(./data.csv, false_values=['No'])||
-   |na_values|空值替换|str<br>list<br>dict|None|(./data.csv,<br>na_values=["0"])|str: 'NA'<br>list: ["0","无"]<br>dict: {'col':0, 1:["无"]}指定列的指定值设NaN|
-   |keep_default_na|保留默认空值|bool|True|(./data.csv,<br>keep_default_na=False)|设定为False时<br>只依靠na_values判断空值|
-   |skip_blank_lines|跳过空行|bool|True|(./data.csv,<br>skip_blank_lines=False)|如果为True，则跳过空行；否则记为NaN。|
-   |parse_dates|日期时间解析|bool list dict|False|(./data.csv,<br>parse_dates=True)|指定日期时间字段进行解析:<br>parse_dates=['年份']<br>将1,4列合并为‘time’时间类型列<br>parse_dates={'time':[1,4]}|
-   |infer_datetime_format|自动识别日期时间|bool|False|(./data.csv,<br>parse_dates=True,<br>infer_datetime_format=True)|按用例方法，自动识别并解析，无需指定|
+   low_memory=True, memory_map=False, float_precision=None)<br>
+   <table>
+   <tr>
+   <td>参数名</td><td>含义</td><td>输入</td><td>默认</td><td>pd.read_csv(用例)</td><td>注释</td>
+   </tr>
+   <tr>
+   <td>filepath<br>_or_buffer</td><td>文件路径</td><td>str</td><td>必填</td><td>(r'.\data.csv')</td><td>可以是url或本地路径</td>
+   </tr>
+   <tr>
+   <td>sep</td><td>指定分隔符</td><td>str</td><td>','</td><td>(./data.csv,<br> sep = '\t')</td><td>可用正则表达式</td>
+   </tr>
+   <tr>
+   <td>header</td><td>指定行作为表头<br>**数据开始**于下行</td><td>int or list[int]</td><td>'infer'</td><td>(./data.csv,<br>header = None)</td><td>数据中没有表头则需设置为None<br>默认会自动判断把第一行作为表头</td>
+   </tr>
+   <tr>
+   <td>names</td><td>设定列名</td><td>array-like</td><td>None</td><td>(./data.csv,<br>names = namelist)</td><td>没有表头时使用，同时设置header=None</td>
+   </tr>
+   <tr>
+   <td>dtype</td><td>每列数据的数据类型</td><td>str or dict</td><td>None</td><td>(./data.csv,<br>dtype = {'time': str, 'ID': int})</td><td></td>
+   </tr>
+   <tr>
+   <td>usecols</td><td>使用部分列</td><td>list[int] or list[str]</td><td>None</td><td>(./data.csv,<br>usecols=[0,4,3])</td><td>默认不按顺序，按顺序方法：(./data.csv, usecols=<br>lambda x: x.upper() in ['COL3','COL1'])</td>
+   </tr>
+   <tr>
+   <td>skiprows</td><td>跳过指定行</td><td>int list[int]</td><td>None</td><td>(./data.csv,<br>skiprows=range(2))</td><td>从文件头开始算起</td>
+   </tr>
+   <tr>
+   <td>skipfooter</td><td>尾部跳过</td><td>int list[int]</td><td>None</td><td>(./data.csv,<br>skipfooter=1)</td><td>用例为跳过最后一行<br>c引擎不支持</td>
+   </tr>
+   <tr>
+   <td>nrows</td><td>读取的行数</td><td>int</td><td>None</td><td>(./data.csv,<br>nrows=1000)</td><td>从文件头开始算起</td>
+   </tr>
+   <tr>
+   <td>true_values</td><td>真值转换</td><td>list</td><td>None</td><td>(./data.csv, true_values=['Yes'])</td><td></td>
+   </tr>
+   <tr>
+   <td>false_values</td><td>假值转换</td><td>list</td><td>None</td><td>(./data.csv, false_values=['No'])</td><td></td>
+   </tr>
+   <tr>
+   <td>na_values</td><td>空值替换</td><td>str<br>list<br>dict</td><td>None</td><td>(./data.csv,<br>na_values=["0"])</td><td>str: 'NA'<br>list: ["0","无"]<br>dict: {'col':0, 1:["无"]}指定列的指定值设NaN</td>
+   </tr>
+   <tr>
+   <td>keep_default_na</td><td>保留默认空值</td><td>bool</td><td>True</td><td>(./data.csv,<br>keep_default_na=False)</td><td>设定为False时<br>只依靠na_values判断空值</td>
+   </tr>
+   <tr>
+   <td>skip_blank_lines</td><td>跳过空行</td><td>bool</td><td>True</td><td>(./data.csv,<br>skip_blank_lines=False)</td><td>如果为True，则跳过空行；否则记为NaN。</td>
+   </tr>
+   <tr>
+   <td>parse_dates</td><td>日期时间解析</td><td>bool list dict</td><td>False</td><td>(./data.csv,<br>parse_dates=True)</td><td>指定日期时间字段进行解析:<br>parse_dates=['年份']<br>将1,4列合并为‘time’时间类型列<br>parse_dates={'time':[1,4]}</td><td>
+   </td><td>infer_datetime_format</td><td>自动识别日期时间</td><td>bool</td><td>False</td><td>(./data.csv,<br>parse_dates=True,<br>infer_datetime_format=True)</td><td>按用例方法，自动识别并解析，无需指定</td>
+   </tr>
    </p>
    </details>
 
