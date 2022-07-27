@@ -23,7 +23,8 @@ import numpy as np
    ```
 
    <details>
-   <summary>pd.read_excel更多参数</summary>
+   <summary>点击查看pd.read_excel更多参数</summary>
+   <p>
    pd.read_excel(io, sheet_name=0, header=0, names=None, index_col=None, usecols=None, 
                       squeeze=False, dtype=None, engine=None, converters=None, true_values=None, 
                       false_values=None, skiprows=None, nrows=None,na_values=None, 
@@ -43,6 +44,7 @@ import numpy as np
    nrows ：要解析的行数  
    na_values ：识别为NAN的字符，写法：["值1","值2"] {"列1":[”值1“,"值2"]}  
    converters ：对某一列使用Lambda函数，进行某种运算，例如{"col":lambda x: x + 1000}  
+   </p>
    </details>
 
 2. 读取csv文件
@@ -59,7 +61,8 @@ import numpy as np
    ```
 
    <details>
-   <summary>pd.read_csv更多参数</summary>
+   <summary>点击查看pd.read_csv更多参数</summary>
+   <p>
    pd.read_csv(filepath_or_buffer: Union[str, pathlib.Path, IO[~AnyStr]],
    sep=',', delimiter=None, header='infer', names=None, index_col=None,
    usecols=None, squeeze=False, prefix=None, mangle_dupe_cols=True,
@@ -95,6 +98,7 @@ import numpy as np
    |skip_blank_lines|跳过空行|bool|True|(./data.csv,<br>skip_blank_lines=False)|如果为True，则跳过空行；否则记为NaN。|
    |parse_dates|日期时间解析|bool list dict|False|(./data.csv,<br>parse_dates=True)|指定日期时间字段进行解析:<br>parse_dates=['年份']<br>将1,4列合并为‘time’时间类型列<br>parse_dates={'time':[1,4]}|
    |infer_datetime_format|自动识别日期时间|bool|False|(./data.csv,<br>parse_dates=True,<br>infer_datetime_format=True)|按用例方法，自动识别并解析，无需指定|
+   </p>
    </details>
 
 3. 读取数据库文件
@@ -116,7 +120,8 @@ import numpy as np
    con.close() # 关闭连接对象，否则会导致连接泄漏，消耗数据库资源
    ```
    <details>
-   <summary>pd.read_sql更多参数</summary>
+   <summary>点击查看pd.read_sql更多参数</summary>
+   <p>
    pd.read_sql(sql, con, index_col=None, coerce_float=True, params=None, parse_dates=None, columns=None, chunksize=None)  
 
     **参数**  
@@ -128,6 +133,7 @@ import numpy as np
    parse_dates=None, list or dict要解析为日期的列名列表。 
    columns=None,  要从SQL表中选择的列名列表
    chunksize=None, int如果指定，则返回一个迭代器，其中“ chunksize”为每个块中要包括的行数。 
+   </p>
    </details>
 4. pd.read_总览
    pd.read_csv(filename)： 从CSV文件导入数据
@@ -177,7 +183,8 @@ pd.DataFrame(data = Multi_list, columns = columns)
     ```
 2. 导出到csv
    <details>
-   <summary>展开查看</summary>
+   <summary>点击展开查看</summary>
+   <p>
    df.to_csv(path_or_buf=None, sep=', ', na_rep='', 
    float_format=None, columns=None, 
    header=True, index=True, index_label=None, mode='w', 
@@ -195,10 +202,12 @@ pd.DataFrame(data = Multi_list, columns = columns)
    |encoding|编码格式|string|None|Python 3上默认为“UTF-8”|
    |date_format|字符串对象转换为日期时间对象|string|None||
    |decimal|字符识别为小数点分隔符|string|‘.’|欧洲数据使用 ​​’，’|
+   </p>
    </details>
 3. 导出到数据库
    <details>
-   <summary>展开查看</summary>
+   <summary>点击展开查看</summary>
+   <p>
    df.to_sql(name, con, schema=None, if_exists='fail', index=True, index_label=None, 
              chunksize=None, dtype=None, method=None)
    name, 表名
@@ -210,4 +219,5 @@ pd.DataFrame(data = Multi_list, columns = columns)
    chunksize=None, int,每次写入行数，默认全部写入
    dtype=None, dict,指定列的类型
    method=None，导入方法{None, 'multi', callable}
+   </p>
    </details>
