@@ -78,7 +78,7 @@ import numpy as np
    encoding=None, dialect=None, error_bad_lines=True,
    warn_bad_lines=True, delim_whitespace=False,
    low_memory=True, memory_map=False, float_precision=None)<br>
-   <table>
+   <table class=”table table-bordered table-striped table-condensed”>
      <tr>
        <td>参数名</td>
        <td>含义</td>
@@ -306,7 +306,7 @@ pd.DataFrame(data = Multi_list, columns = columns)
    quoting=None, quotechar='"', line_terminator='\n', 
    chunksize=None, tupleize_cols=None, 
    date_format=None, doublequote=True, escapechar=None, decimal='.')<br>
-   <table>
+   <table class=”table table-bordered table-striped table-condensed”>
      <tr>
        <td>参数名</td>
        <td>含义</td>
