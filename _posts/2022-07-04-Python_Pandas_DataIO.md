@@ -168,13 +168,13 @@ import numpy as np
    </p>
    </details>
 4. pd.read_总览
-   pd.read_csv(filename)： 从CSV文件导入数据  
-   pd.read_excel(filename)： 从Excel文件导入数据  
-   pd.read_table(filename)： 从限定分隔符的文本文件导入数据  
+   pd.read_csv(filename)： 从CSV文件导入数据  <br>
+   pd.read_excel(filename)： 从Excel文件导入数据  <br>
+   pd.read_table(filename)： 从限定分隔符的文本文件导入数据  <br>
    pd.read_json(json_string)： 从JSON格式的字符串导入数据  
-   pd.read_SQL(query, connection_object)： 从SQL表/库导入数据  
-   pd.read_html(url)： 解析URL、字符串或者HTML文件  
-   pd.read_clipboard()： 从粘贴板获取内容  
+   pd.read_SQL(query, connection_object)： 从SQL表/库导入数据  <br>
+   pd.read_html(url)： 解析URL、字符串或者HTML文件  <br>
+   pd.read_clipboard()： 从粘贴板获取内容  <br>
 
 ## 3. 数据构建
 ```python
