@@ -1,10 +1,10 @@
 ---
-title:  pandas-数据获取与保存
+title:  pandas-数据导入与导出
 layout: default
 ---
 [![返回](/assets/images/back.png)](../../../../2022/07/05/Python_Index.html)
 
-# pandas-数据获取与保存
+# pandas-数据导入与导出
 
 ## 1. 包载入
 
