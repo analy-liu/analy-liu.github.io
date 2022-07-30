@@ -11,9 +11,7 @@ layout: default
 import requests
 ```
 
-## 使用模板
-
-- get
+## get使用
 
 ```python
 requests.get(
@@ -46,7 +44,7 @@ header = {
 ## 设置头部信息，代理ip，不使用证书
 r = requests.get(target_url, verify=False, headers=header, proxies=proxy) 
 ```
-- post
+## post使用
 
 ```python
 requests.post(url, data=None, json=None, **kwargs)
