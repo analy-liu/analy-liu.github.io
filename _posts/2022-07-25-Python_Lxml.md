@@ -52,7 +52,7 @@ target_element = html_xml.xpath('xpath')
 #获取id="menu"的ul中的所有href
 target_element = html_xml.xpath('\\ul[@id="menu"\li\a\@href')
 # 返回
-["https://www.1.com"，"https://www.2.com"，"https://www.3.com"]
+["https://www.1.com","https://www.2.com","https://www.3.com"]
 
 #获取id="text"的ul中的倒数第二个文本内容
 target_element = html_xml.xpath('\\ul[@id="text"\li[last()-1]\a\text()')
