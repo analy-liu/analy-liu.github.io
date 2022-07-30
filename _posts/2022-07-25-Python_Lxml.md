@@ -27,7 +27,9 @@ html_xml = etree.HTML(r.text)
 target_element = html_xml.xpath('xpath')
 ```
 
-## 使用例子
+## 使用示例
+
+示例html
 
 ```html
 <!DOCTYPE html>\n<html lang="zh-CN">
@@ -47,6 +49,8 @@ target_element = html_xml.xpath('xpath')
 </body>
 </html>
 ```
+
+查找html内容
 
 ```python
 #获取id="menu"的ul中的所有href
