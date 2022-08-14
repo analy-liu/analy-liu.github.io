@@ -11,9 +11,9 @@ layout: default
 - [x] [pandas-数据导入与导出](../../../../2022/07/04/Python_Pandas_DataIO.html)
 - [x] [requests-web常规爬虫](../../../../2022/07/25/Python_Requests.html)
 - [x] [lxml-html文件内容处理](../../../../2022/07/25/Python_Lxml.html)
-- [ ] [seleniumwire-web模拟用户爬虫](../../../../2022/07/25/Python_Seleniumwire.html)
-- [ ] [内置函数-本地数据读取与保存]
-- [ ] [函数实现-腾讯文档爬虫]
+- [x] [seleniumwire-web模拟用户爬虫](../../../../2022/07/25/Python_Seleniumwire.html)
+- [x] [内置函数-本地数据读取与保存](../../../../2022/08/01/Python_Built-in-functions_LocalDataIO.html)
+- [x] [函数实现-腾讯文档爬虫](../../../../2022/08/02/Python_Self-build-functions_DocqqAPI.html)
 
 # 数据清洗与特征工程
 
@@ -64,3 +64,4 @@ pandas的透视功能相比excel透视表有缺陷，需要自行完善
 # 未归类
 
 - [x] [pandas使用手册-总](../../../../2022/06/02/Python_Pandas_Note.html)
+- [x] [python内置函数整理](../../../../2022/08/03/Python-Built-in-functions_Note.html)
