@@ -208,26 +208,26 @@ f.close()
 <summary>点击展开查看：非常用参数</summary>
 <p>
 
-<h3>buffering 缓冲设置 [-1,0,1]</h3>
+<h4>buffering 缓冲设置 [-1,0,1]</h4>
   -1：默认值，使用系统默认缓冲机制<br>
   0:不使用缓冲，直接读写磁盘<br>
   1:单行缓冲<br>
 
-<h3>errors 编解码报错的处理模式 str类型</h3>
+<h4>errors 编解码报错的处理模式 str类型</h4>
   在mode参数包含t时不可指定，即仅文本模式可用<br>
   常用模式：<br>
   strict：编解码错误则报错<br>
   ignore：编解码出现错误会忽略，不报错<br>
   replace：编解码出现错误不会报错，会用“?”替代要写入或读取的无法解析的数据<br>
 
-<h3>newline 换行符设置，str类型</h3>
+<h4>newline 换行符设置，str类型</h4>
   None（默认）、"\r"、"\n"、"\r\n"<br>
 
-<h3>closefd 控制file参数的传入值类型 bool类型</h3>
+<h4>closefd 控制file参数的传入值类型 bool类型</h4>
   True：默认，file参数可以是表示文件路径的字符串，也可以是文件描述符<br>
   False：file参数只能是文件描述符，传入字符串会报错。<br>
 
-<h3>opener</h3>
+<h4>opener</h4>
   传递一个可调用的 opener 来使用自定义 opener<br>
   <pre>
   import os
