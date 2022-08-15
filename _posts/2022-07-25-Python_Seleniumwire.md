@@ -66,18 +66,18 @@ element.text # 获取元素的文本
 element.size # 获取元素的尺寸
 
 # 键盘操作
-send_keys(Keys.BACK_SPACE) 删除键（BackSpace）
-send_keys(Keys.SPACE) 空格键(Space)
-send_keys(Keys.TAB) 制表键(Tab)
-send_keys(Keys.ESCAPE) 回退键（Esc）
-send_keys(Keys.ENTER) 回车键（Enter）
-send_keys(Keys.CONTROL,'a') 全选（Ctrl+A）
-send_keys(Keys.CONTROL,'c') 复制（Ctrl+C）
-send_keys(Keys.CONTROL,'x') 剪切（Ctrl+X）
-send_keys(Keys.CONTROL,'v') 粘贴（Ctrl+V）
-send_keys(Keys.F1) 键盘 F1
-……
-send_keys(Keys.F12) 键盘 F12
+send_keys(Keys.BACK_SPACE) #删除键（BackSpace）
+send_keys(Keys.SPACE) #空格键(Space)
+send_keys(Keys.TAB) #制表键(Tab)
+send_keys(Keys.ESCAPE) #回退键（Esc）
+send_keys(Keys.ENTER) #回车键（Enter）
+send_keys(Keys.CONTROL,'a') #全选（Ctrl+A）
+send_keys(Keys.CONTROL,'c') #复制（Ctrl+C）
+send_keys(Keys.CONTROL,'x') #剪切（Ctrl+X）
+send_keys(Keys.CONTROL,'v') #粘贴（Ctrl+V）
+send_keys(Keys.F1) #键盘 F1
+# ……
+send_keys(Keys.F12) #键盘 F12
 
 # 鼠标操作
 # 引入 ActionChains 类
@@ -85,11 +85,11 @@ from selenium.webdriver.common.action_chains import ActionChains
 element = driver.find_element_by_link_text("设置")# 设置元素
 ActionChains(driver).move_to_element(element).perform()# 悬停操作
 # function
-perform()： 执行所有 ActionChains 中存储的行为；
-context_click()： 右击；
-double_click()： 双击；
-drag_and_drop()： 拖动；
-move_to_element()： 鼠标悬停。
+perform()# 执行所有 ActionChains 中存储的行为；
+context_click()# 右击；
+double_click()# 双击；
+drag_and_drop()# 拖动；
+move_to_element()# 鼠标悬停。
 
 # 关闭浏览器
 driver.close()
