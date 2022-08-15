@@ -6,7 +6,7 @@ layout: default
 
 # Python 文件I/O
 
-## Open使用
+### Open使用
 
 **三种使用形式**
 ```python
@@ -31,7 +31,7 @@ with open(r"F:\data\test\English_Path\test.txt", mode='w',encoding = 'utf-8') as
     # 会覆盖原内容,无文件会新建
 ```
 
-## Open对象方法
+### Open对象方法
 
 **方法列表**
 
@@ -166,7 +166,7 @@ read() 读取刷新缓冲区后内容
   
 ]  
 
-## Open文件对象常用的属性
+### Open文件对象常用的属性
 
 ```python
 f = open(r"F:\data\test\English_Path\test.txt", mode='w',encoding = 'utf-8')
@@ -179,7 +179,7 @@ f.closed # 文件是否关闭
 f.close()
 ```
 
-## Open参数
+### Open参数
 
 **open(file, encoding=None, mode='r', buffering=-1, errors=None, newline=None, closefd=True, opener=None)**
 
@@ -245,4 +245,4 @@ f.close()
 </p>
 </details>
 
-## [其他python内置函数](../../../../2022/08/03/Python-Built-in-functions_Note.html)
+### [其他python内置函数](../../../../2022/08/03/Python-Built-in-functions_Note.html)

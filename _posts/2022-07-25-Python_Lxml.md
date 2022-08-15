@@ -17,7 +17,7 @@ pip uninstall lxml
 python -m pip install lxml -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
-## 基本语法
+### 基本语法
 
 ```python
 from lxml import etree
@@ -27,7 +27,7 @@ html_xml = etree.HTML(r.text)
 target_element = html_xml.xpath('xpath')
 ```
 
-## 使用示例
+### 使用示例
 
 示例html
 

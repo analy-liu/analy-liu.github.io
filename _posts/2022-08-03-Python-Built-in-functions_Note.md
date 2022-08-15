@@ -4,7 +4,9 @@ layout: default
 ---
 [![返回](/assets/images/back.png)](../../../../2022/07/05/Python_Index.html)
 
-# 异常处理-try except else finally
+# python内置函数
+
+### 异常处理-try except else finally
 ```python
 try:
     必定会执行:测试代码

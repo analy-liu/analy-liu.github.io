@@ -6,14 +6,14 @@ layout: default
 
 # pandas-数据导入与导出
 
-## 1. 包载入
+### 1. 包载入
 
 ```python
 import pandas as pd
 import numpy as np
 ```
 
-## 2. 数据读取
+### 2. 数据读取
 1. 读取excel文件
    ```python
    # 读取 excel 文件
@@ -258,7 +258,7 @@ import numpy as np
    pd.read_html(url)： 解析URL、字符串或者HTML文件  <br>
    pd.read_clipboard()： 从粘贴板获取内容  <br>
 
-## 3. 数据构建
+### 3. 数据构建
 ```python
 # 生成dataframe
 # 方法一：从字典对象导入数据,字典keys是列名，对应的values是一列的值
@@ -270,7 +270,7 @@ columns = ['字母','数字']
 pd.DataFrame(data = Multi_list, columns = columns) 
 ```
 
-## 4. 数据导出
+### 4. 数据导出
 
 1. 导出到excel
     ```python
