@@ -59,28 +59,28 @@ with open(r"F:\data\test\English_Path\test.txt", mode='w',encoding = 'utf-8') as
 <summary>点击展开查看：非常用参数</summary>
 <p>
 
-- **buffering 缓冲设置 [-1,0,1]**
-  -1：默认值，使用系统默认缓冲机制
-  0:不使用缓冲，直接读写磁盘
-  1:单行缓冲
+<h3>buffering 缓冲设置 [-1,0,1]</h3>
+  -1：默认值，使用系统默认缓冲机制<br>
+  0:不使用缓冲，直接读写磁盘<br>
+  1:单行缓冲<br>
 
-- **errors 编解码报错的处理模式 str类型**
-  在mode参数包含t时不可指定，即仅文本模式可用
-  常用模式：
-  strict：编解码错误则报错
-  ignore：编解码出现错误会忽略，不报错
-  replace：编解码出现错误不会报错，会用“?”替代要写入或读取的无法解析的数据
+<h3>errors 编解码报错的处理模式 str类型</h3>
+  在mode参数包含t时不可指定，即仅文本模式可用<br>
+  常用模式：<br>
+  strict：编解码错误则报错<br>
+  ignore：编解码出现错误会忽略，不报错<br>
+  replace：编解码出现错误不会报错，会用“?”替代要写入或读取的无法解析的数据<br>
 
-- **newline 换行符设置，str类型**
-  None（默认）、"\r"、"\n"、"\r\n"
+<h3>newline 换行符设置，str类型</h3>
+  None（默认）、"\r"、"\n"、"\r\n"<br>
 
-- **closefd 控制file参数的传入值类型 bool类型**
-  True：默认，file参数可以是表示文件路径的字符串，也可以是文件描述符
-  False：file参数只能是文件描述符，传入字符串会报错。
+<h3>closefd 控制file参数的传入值类型 bool类型</h3>
+  True：默认，file参数可以是表示文件路径的字符串，也可以是文件描述符<br>
+  False：file参数只能是文件描述符，传入字符串会报错。<br>
 
-- **opener** 
-  传递一个可调用的 opener 来使用自定义 opener
-  ```python
+<h3>opener</h3>
+  传递一个可调用的 opener 来使用自定义 opener<br>
+  <code>
   import os
   dir_fd = os.open('somedir', os.O_RDONLY)
   def opener(path, flags):
@@ -90,8 +90,8 @@ with open(r"F:\data\test\English_Path\test.txt", mode='w',encoding = 'utf-8') as
       print('This will be written to somedir/spamspam.txt', file=f)
 
   os.close(dir_fd)  # 不要泄漏文件描述符
-  ```
-  参考链接：
+  </code>
+  参考链接：<br>
   https://stackoverflow.com/questions/37241711/what-is-the-use-of-opener-argument-in-built-in-open-function
 </p>
 </details>
