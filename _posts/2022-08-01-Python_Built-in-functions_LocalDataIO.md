@@ -229,7 +229,7 @@ f.close()
 
 <h4>opener</h4>
   传递一个可调用的 opener 来使用自定义 opener<br>
-  <pre>
+  <pre style="color:white">
   import os
   dir_fd = os.open('somedir', os.O_RDONLY)
   def opener(path, flags):
