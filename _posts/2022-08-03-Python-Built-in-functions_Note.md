@@ -6,7 +6,7 @@ layout: default
 
 # python内置函数
 
-### 异常处理-try except else finally
+## 1. 异常处理-try except else finally
 ```python
 try:
     必定会执行:测试代码

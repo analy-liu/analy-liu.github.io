@@ -21,9 +21,9 @@ df = pd.DataFrame(dict_)
 |2|B-01|24|60|2022-07-19|NaN|
 |3|B-01|34|60|2022-08-20|None|
 
-# 增（Create）
+# 1. Create 增
 
-## 增加行
+## 1.1 增加行
 ```python
 def insert_row(df,content,index):
     # 在插入处拆分为两个表
@@ -46,7 +46,7 @@ df = insert_row(df,["C-01", 14, 30, '2021-03-01',"李四"],2)
 |3|B-01|24|60|2022-07-19|NaN|
 |4|B-01|34|60|2022-08-20|None|
 
-## 增加列
+## 1.2 增加列
 
 **方法一：使用insert函数**
 优点：可以插入到任意位置
@@ -81,7 +81,7 @@ df.loc[:,"备注"] = ["无","空字符","np.nan","None"]
 |2|B-01|24|60|2022-07-19|NaN|1440|np.nan|
 |3|B-01|34|60|2022-08-20|None|2040|None|
 
-## 数据拆分
+## 1.3 数据拆分
 
 **方法一：使用split，使用split需要用str将数据集转化为字符串**  
 Series.str.split(sep,n,expand=false)从前往后切分  
@@ -119,7 +119,7 @@ df.loc[:,"编号字母"] = df.loc[:,"编号"].str.extract('(^.*(?=-))', expand=F
 
 更多正则表达式相关知识请看[python-字符串与正则表达式](../../../../2022/08/05/Python_Re_StrAndReg.html)
 
-## 数据合并
+## 1.4 数据合并
 
 DataFrame合并主要使用两种方法，merge与concat  
 
@@ -179,28 +179,28 @@ pd.concat([df1,df2], ignore_index=True, sort=False)
 pd.concat([df1,df2], axis=1, sort=False)
 ```
 
-## 函数apply使用
+## 1.5 函数apply使用
 
-## 函数实现-vlookup
+## 1.6 函数实现-vlookup
 
-# 查（Read）
+# 2. Read 查
 
-## 切片
+## 2.1 切片
 
-# 删（Delete）
+# 3. Delete删
 
-## 删除行
+## 3.1 删除行
 
-## 删除列
+## 3.2 删除列
 
-## 数据去重
+## 3.3 数据去重
 
-# 改（Update）
+# 4. Update 改
 
-## 行列顺序调整
+## 4.1 行列顺序调整
 
-## 行列重命名
+## 4.2 行列重命名
 
-## 空值处理
+## 4.3 空值处理
 
-## 日期时间格式处理
+## 4.4 日期时间格式处理
