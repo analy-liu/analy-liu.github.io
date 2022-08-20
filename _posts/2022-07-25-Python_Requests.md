@@ -11,7 +11,7 @@ layout: default
 import requests
 ```
 
-### get使用
+## 1. get使用
 
 ```python
 requests.get(
@@ -44,7 +44,7 @@ header = {
 ## 设置头部信息，代理ip，不使用证书
 r = requests.get(target_url, verify=False, headers=header, proxies=proxy) 
 ```
-### post使用
+## 2. post使用
 
 ```python
 requests.post(url, data=None, json=None, **kwargs)
@@ -69,7 +69,7 @@ json_data = json.dumps(dict_data)
 dict_data = json.loads(json_data)
 ```
 
-### 返回值描述
+## 3. 返回值描述
 
 返回值通常命名为 r 或 response
 

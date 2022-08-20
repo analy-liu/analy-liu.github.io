@@ -17,7 +17,7 @@ layout: default
   PhantomJS浏览器驱动：[phantomjs](http://phantomjs.org/)
 3. 设置环境变量
 
-### 基本操作
+## 1. 基本操作
 ```python
 from selenium import webdriver
 # 打开浏览器
@@ -94,7 +94,7 @@ move_to_element()# 鼠标悬停。
 # 关闭浏览器
 driver.close()
 ```
-### 页面等待
+## 2. 页面等待
 ```python
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -170,7 +170,7 @@ instance = WebDriverWait(driver,10).until(EC.alert_is_present())
 instance.accept()
 # 关闭弹窗
 ```
-### 警告框处理
+## 3. 警告框处理
 ```python
 alert = driver.switch_to_alert()
 ```
@@ -190,7 +190,7 @@ driver.get('http://www.baidu.com')
 sel = driver.find_element_by_xpath("//select[@id='nr']")
 Select(sel).select_by_value('50')  # 显示50条
 ```
-### cookie操作
+## 4. cookie操作
 
 **selenium**
 
@@ -218,7 +218,7 @@ for i in driver.requests:
             cookie = re.findall(r'(SESSION.*(?=;))', cookie)[0]
             self.cookies[i.headers['Host']] = cookie
 ```
-### 设置无界面
+## 5. 设置无界面
 ```python
 from selenium import webdriver # 模拟登录
 from selenium.webdriver.chrome.options import Options

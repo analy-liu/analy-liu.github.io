@@ -8,7 +8,7 @@ layout: default
 
 lxml是一个Python库，使用它可以轻松处理XML和HTML文件，还可以用于web爬取。
 
-## 卸载与安装
+## 1. 卸载与安装
 
 ```
 # 卸载
@@ -17,7 +17,7 @@ pip uninstall lxml
 python -m pip install lxml -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
-### 基本语法
+## 2. 基本语法
 
 ```python
 from lxml import etree
@@ -27,7 +27,7 @@ html_xml = etree.HTML(r.text)
 target_element = html_xml.xpath('xpath')
 ```
 
-### 使用示例
+## 3. 使用示例
 
 示例html
 

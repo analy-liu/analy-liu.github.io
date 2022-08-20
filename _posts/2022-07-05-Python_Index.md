@@ -6,7 +6,7 @@ layout: default
 
 # python数据分析
 
-### 数据获取
+## 1. 数据获取
 
 数据有多种获取途径，下面是常用的几种获取数据的方式，最终数据以DataFrame格式保存
 
@@ -17,7 +17,7 @@ layout: default
 - [x] [内置函数-本地数据读取与保存](../../../../2022/08/01/Python_Built-in-functions_LocalDataIO.html)
 - [x] [函数实现-腾讯文档爬虫](../../../../2022/08/02/Python_Self-build-functions_DocqqAPI.html)
 
-### 数据清洗与特征工程
+## 2. 数据清洗与特征工程
 
 数据清洗主要使用pandas进行增查删改的操作，有时也需要对文本进行清洗和提取
 
@@ -47,19 +47,19 @@ layout: default
 
 
 
-### 数据透视与描述性分析
+## 3. 数据透视与描述性分析
 
 pandas的透视功能相比excel透视表有缺陷，需要自行完善
 
 - [ ] [函数实现-分组汇总]
 - [ ] [函数实现-分组排序]
 
-### 数据可视化
+## 4. 数据可视化
 
 - [ ] [pyecharts使用]
 - [ ] [函数实现-pyecharts易用版]
 
-### 建模分析
+## 5. 建模分析
 
 1. 分类
    - [ ] [XGBoost]
@@ -72,7 +72,7 @@ pandas的透视功能相比excel透视表有缺陷，需要自行完善
 5. 时间序列
 时间序列通常不用python做
 
-### 未归类
+## 6. 未归类
 
 - [x] [pandas使用手册-总](../../../../2022/06/02/Python_Pandas_Note.html)
 - [x] [python内置函数整理](../../../../2022/08/03/Python-Built-in-functions_Note.html)
