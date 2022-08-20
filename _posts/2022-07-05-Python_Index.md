@@ -19,24 +19,33 @@ layout: default
 
 ### 数据清洗与特征工程
 
-数据清洗主要使用pandas
+数据清洗主要使用pandas进行增查删改的操作，有时也需要对文本进行清洗和提取
+
+- [x] [pandas-增查删改](../../../../2022/08/04/Python_Pandas_CRUD.html)
+- [x] [python-字符串与正则表达式](../../../../2022/08/05/Python_Re_StrAndReg.html)
+
+**增查删改内容目录**
 
 1. 增
-   - [ ] [增加行、列]
-   - [ ] [数据拆分]
-   - [ ] [数据合并-merge、concat]
-   - [ ] [大杀器apply]
-   - [ ] [函数实现-vlookup]
+   - 增加行、列
+   - 数据拆分
+   - 数据合并-merge、concat
+   - 大杀器apply
+   - 函数实现-vlookup
 2. 查
-   - [ ] [切片loc、iloc、query]
+   - 切片loc、iloc、query
 3. 删
-   - [ ] [删除行、列]
-   - [ ] [数据去重duplicates]
+   - 删除行、列
+   - 数据去重duplicates
 4. 改
-   - [ ] [行与列顺序调整]
-   - [ ] [空值处理-NaN、null与空字符]
-   - [ ] [重命名]
-   - [ ] [时间格式处理]
+   - 行与列顺序调整
+   - 空值处理-NaN、None与空字符
+   - 重命名
+   - 时间格式处理
+
+
+
+
 
 ### 数据透视与描述性分析
 
