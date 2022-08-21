@@ -181,7 +181,97 @@ pd.concat([df1,df2], axis=1, sort=False)
 
 ## 1.5 函数apply使用
 
+apply函数主要功能是生成条件列，其极高的自由度能实现几乎所有条件的批量数据处理，堪称数据处理大杀器。
+
+**apply参数**
+
+```python
+DataFrame.apply(
+    func: 'AggFuncType', # 应用到每行或列的函数，可以是lambda匿名函数或自定义函数
+    axis: 'Axis' = 0, # 对每一行或列数据应用函数。列：0 or index；行：1 or columns
+    raw: 'bool' = False, # 控制数据是以Series还是ndarray传递，False：Series；True：ndarray
+    result_type=None, # axis=1时起作用，{'expand'：返回列, 'reduce'：返回Series, 'broadcast'：结果将被广播到 DataFrame 的原始形状, None：类似列表的结果将作为这些结果的 Series 返回。但是，如果应用函数返回一个 Series ，这些结果将被扩展为列}
+    args=(), # 以元组传递额外参数
+    **kwargs # 以字典传递额外参数)
+```
+
+**apply应用**
+
+**示例一：** 根据每行情况，新增条件列
+
+新增列，日期为今年显示今年，往年显示往年
+```python
+df['日期'] = pd.to_datetime(df['日期']) # 将文本格式日期转为日期格式
+## 写法一：对单行进行处理，不用声明axis=1
+df['是否今年'] = df['日期'].apply(lambda x: '今年' if x>datetime.datetime(datetime.datetime.today().year,1,1) else '往年')
+## 写法二：对整个DataFrame处理，x.列名可表示单独列，需要加上axis=1
+df['是否今年'] = df.apply(lambda x: '今年' if x.日期>datetime.datetime(datetime.datetime.today().year,1,1) else '往年',axis=1)
+## 写法三：构造自定义函数，并调用
+def YNyear(date):
+    if date>datetime.datetime(datetime.datetime.today().year,1,1):
+        return "今年"
+    else:
+        return "往年"
+df['是否今年'] = df.apply(lambda x: YNyear(x.日期),axis=1)
+```
+
+||编号|销量|单价|日期|负责人|是否今年|
+|--|--|--|--|--|--|--|
+|0|A-01|36|40|2019-07-01|张三|往年|
+|1|A-02|75|50|2021-03-21||往年|
+|2|B-01|24|60|2022-07-19|NaN|今年|
+|3|B-01|34|60|2022-08-20|None|今年|
+
+**示例二：** 根据每列情况，计算数值
+
+列出销量与单价的最大最小值
+
+```python
+## 写法一：匿名函数
+df.loc[:,['销量','单价']].apply(lambda x: pd.Series([x.min(),x.max()],index=['min','max']),axis=0)
+## 写法二：自定义函数
+def minmax(x):
+    return pd.Series([x.min(),x.max()],index=['min','max'])
+df.loc[:,['销量','单价']].apply(minmax,axis=0) #axis=0可以不写，默认就是0
+```
+
+||销量|单价|
+|--|--|--|
+|min|24|40|
+|max|75|60|
+
+**示例三：** 自定义函数与匿名函数（含args与**kwargs使用）
+
+新增列，判断流水是否大于均值，并标出最低流水，流水=销量*单价
+
+```python
+# 方法一： 匿名函数 优点：不用命名函数，缺点：条件多时不直观
+df['流水等级'] = df.apply(lambda x: "低于均值,最低流水：{}".format(x.销量*x.单价) if x.销量*x.单价 == min(df['销量']*df['单价']) else "高于均值" if x.销量*x.单价>(df['销量']*df['单价']).mean() else "小于等于均值",axis=1)
+# 方法二：自定义函数
+def flow_level(x,v_min,v_mean):
+    flow = x['销量']*x['单价']
+    if flow == v_min:
+        return "低于均值,最低流水：{}".format(flow)
+    elif flow > v_mean:
+        return "高于均值"
+    else:
+        return "小于等于均值"
+## 使用args传递参数
+df['流水等级'] = df.apply(flow_level,axis=1,args=(min(df['销量']*df['单价']),(df['销量']*df['单价']).mean(),))
+## 使用**kwargs传递参数
+df['流水等级'] = df.apply(flow_level,axis=1,v_min=min(df['销量']*df['单价']),v_mean=(df['销量']*df['单价']).mean())
+```
+
+||编号|销量|单价|日期|负责人|流水等级|
+|--|--|--|--|--|--|--|
+|0|A-01|36|40|2019-07-01|张三|低于均值,最低流水：1440|
+|1|A-02|75|50|2021-03-21||高于均值|
+|2|B-01|24|60|2022-07-19|NaN|低于均值,最低流水：1440|
+|3|B-01|34|60|2022-08-20|None|小于等于均值|
+
 ## 1.6 函数实现-vlookup
+
+
 
 # 2. Read 查
 
