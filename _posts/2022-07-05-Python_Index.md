@@ -23,6 +23,7 @@ layout: default
 
 - [x] [pandas-增查删改](../../../../2022/08/04/Python_Pandas_CRUD.html)
 - [x] [python-字符串与正则表达式](../../../../2022/08/05/Python_Re_StrAndReg.html)
+- [x] [函数实现-vlookup](../../../../2022/08/06/Python_Self-build-functions_Nbvlookup.html)
 
 **增查删改内容目录**
 
