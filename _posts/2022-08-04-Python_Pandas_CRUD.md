@@ -412,11 +412,9 @@ pandas查数据叫做切片，主要用loc与iloc来实现，query则是类似SQ
 |2|B-01|24|60|2022-07-19|NaN|
 |3|B-01|34|60|2022-08-20|None|
 
-#### **loc与iloc**
+**基础查询：loc与iloc指定行列**
 
 loc与iloc结构类似，两者均是[行参数,列参数]的形式
-
-**基础查询：指定行列**
 
 通过几组等价写法，能直观的了解二者的基础写法和区别
 
@@ -430,6 +428,10 @@ df.iloc[1:2,0]
 # 查询第二行，编号列，返回内容
 df.loc[1,'编号']
 df.iloc[1,0]
+
+# 查全部行列
+df.loc[:,:]
+df.iloc[:,:]
 """
 行参数：
 查单行写n，
@@ -438,14 +440,46 @@ df.iloc[1,0]
 列参数：
 iloc的行参数与列参数写法相同，查范围均是左闭右开
 loc的列参数是列名，查单列用str，查范围用list
+
+查全部，单独写 :
 """
 ```
 
-**条件查询**
+**条件查询：通常用loc和query**
 
+```python
+# 查数值
+df.loc[df['销量']>35,:]
+df.query("(销量>35)")
 
+# 查非空值 ~表示取反
+df.loc[~df['负责人'].isnull(),:]
+df.loc[~df['负责人'].isna(),:] # isnull与isna基本等同，用哪个都行
+df.query("(~负责人.isna())",engine='python')
 
-#### **query**
+# 文字模糊查询 可以使用 | 进行多个条件的筛选
+df.loc[df['编号'].str.contains("B|02"),:]
+df.query("(编号.str.contains('B|02'))",engine='python')
+
+# 查多个固定数值或字符串
+df.loc[df['单价'].isin([50,60]),:]
+df.query("(单价.isin([50,60]))",engine='python')
+
+# 查日期范围
+df['日期'] = pd.to_datetime(df['日期'])
+df.loc[df['日期']>datetime.datetime(datetime.datetime.today().year,1,1),:]
+df.query("(日期>datetime.datetime(datetime.datetime.today().year,1,1))")
+
+# 多条件查询时每个条件都要用小括号括起来 
+# 逻辑运算：&(且) |(或) ~(取反) ^(异或) 
+df.loc[(df['销量']<40)&(~df['负责人'].isnull()),:]
+df.query("(销量<40)&(~负责人.isna())",engine='python')
+
+# 取偶数行
+df.iloc[lambda x: x.index % 2 == 0]
+df.loc[lambda x: x.index % 2 == 0]
+df.query("(index % 2 == 0)")
+```
 
 # 3. Delete删
 
