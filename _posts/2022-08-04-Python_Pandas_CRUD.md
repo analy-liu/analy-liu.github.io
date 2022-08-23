@@ -657,7 +657,7 @@ df.rename(index={0: "x", 1: "y", 2: "z"}) # 重命名index
 df.rename(str.lower, axis='columns') # 使用函数，将列名中英文大写变小写
 ```
 
-## 4.2 数据类型转换(日期文本数字)
+## 4.2 数据类型转换
 
 pandas中，查看数据类型可以使用 df.dtypes 或者 df.info()
 
@@ -738,7 +738,9 @@ pd.to_timedelta(np.arange(5), unit='d')
 >>>TimedeltaIndex(['0 days', '1 days', '2 days', '3 days', '4 days'],
                dtype='timedelta64[ns]', freq=None)
 ```
+
 unit 可选值：
+
 - 星期：‘W’
 - 日：‘D’ / ‘days’ / ‘day’
 - 小时：‘hours’ / ‘hour’ / ‘hr’ / ‘h’
@@ -748,6 +750,7 @@ unit 可选值：
 - 微秒：‘us’ / ‘microseconds’ / ‘microsecond’ / ‘micro’ / ‘micros’ / ‘U’
 - 纳秒：‘ns’ / ‘nanoseconds’ / ‘nano’ / ‘nanos’ / ‘nanosecond’ / ‘N’
 （1s = 1000ms,1ms = 1000us,1us = 1000ns）
+
 ## 4.3 空值处理
 
 python里的空值有 None 和 NaN 两种  
