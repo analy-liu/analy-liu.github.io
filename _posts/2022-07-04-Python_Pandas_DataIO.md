@@ -268,6 +268,8 @@ pd.DataFrame(dict_)
 Multi_list = [['A',1],['B',2]]
 columns = ['字母','数字']
 pd.DataFrame(data = Multi_list, columns = columns) 
+# 方法三：用series直接构成DataFrame
+s.to_frame()
 ```
 
 ## 4. 数据导出
