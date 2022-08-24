@@ -46,10 +46,10 @@ layout: default
 
 ## 3. 数据透视与描述性分析
 
-pandas的透视功能相比excel透视表有缺陷，需要自行完善
+在数据透视方面，excel的功能比python完善，如果条件允许，数据透视在excel里进行更方便  
+但有时候需要在python里完成透视工作，所有完善了一些基础透视功能
 
-- [ ] [函数实现-分组汇总]
-- [ ] [函数实现-分组排序]
+- [x] [函数实现-pdpivot：分级汇总与排序](../../../../2022/08/10/Python_Self-build-functions_Pdpivot.html)
 
 ## 4. 数据可视化
 
