@@ -276,8 +276,8 @@ df['流水等级'] = df.apply(flow_level,axis=1,v_min=min(df['销量']*df['单�
 
 在excel中，有一个函数是必须学会的，那就是vlookup，简单的表连接都靠这个函数实现
 
-python的pandas包中，有一个类似但强于vlookup的函数merge  
-但也正是功能强大，使得参数设置繁琐，而vlookup的功能往往需要经常使用
+python的pandas包中没有vlookup函数，但有一个类似的函数merge，功能比vlookup多。  
+但也正是因为功能比较多，使得参数设置繁琐，使用起来比vlookup麻烦。
 
 于是写了下面这个函数，优化了参数，并内置其他一些便捷功能，可直接复制使用
 
@@ -359,9 +359,15 @@ class pdexcel(object):
 
 **使用示例**  
 
-简单连接，默认左连接，左右表连接键名称相同可只使用on，重复列会自动加上_R后缀
+最简单的写法
+
 ```python
-# pdexcel(左表).nbvlookup(右表, lookdict=数值列名称, left_on=左表连接列，right_on=右表连接列).df
+pdexcel(左表).nbvlookup(右表, lookdict=数值列名称, on=连接列).df
+```
+
+默认左连接，重复列会自动加上_R后缀
+```python
+# 左右表连接列列名不同时用left_on与right_on
 pdexcel(df).nbvlookup(df_cost, lookdict = ['成本','负责人'], left_on = '日期',right_on='日期2').df
 ```
 
