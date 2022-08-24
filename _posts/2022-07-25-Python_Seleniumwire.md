@@ -9,15 +9,16 @@ layout: default
 准备工作：
 1. 安装：pip install selenium
 2. 下载浏览器驱动
-  Firefox浏览器驱动：[geckodriver](https://github.com/mozilla/geckodriver/releases)
-  Chrome浏览器驱动：[chromedriver](https://sites.google.com/a/chromium.org/chromedriver/home) 需要开全局代理、[taobao镜像](http://npm.taobao.org/mirrors/chromedriver/)
-  IE浏览器驱动：[IEDriverServer](http://selenium-release.storage.googleapis.com/index.html)
-  Edge浏览器驱动：[MicrosoftWebDriver](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver)
-  Opera浏览器驱动：[operadriver](https://github.com/operasoftware/operachromiumdriver/releases)
-  PhantomJS浏览器驱动：[phantomjs](http://phantomjs.org/)
+  Firefox浏览器驱动：[geckodriver](https://github.com/mozilla/geckodriver/releases)  
+  Chrome浏览器驱动：[chromedriver](https://sites.google.com/a/chromium.org/chromedriver/home) 需要开全局代理、[taobao镜像](http://npm.taobao.org/mirrors/chromedriver/)  
+  IE浏览器驱动：[IEDriverServer](http://selenium-release.storage.googleapis.com/index.html)  
+  Edge浏览器驱动：[MicrosoftWebDriver](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver)  
+  Opera浏览器驱动：[operadriver](https://github.com/operasoftware/operachromiumdriver/releases)  
+  PhantomJS浏览器驱动：[phantomjs](http://phantomjs.org/)  
 3. 设置环境变量
 
 ## 1. 基本操作
+
 ```python
 from selenium import webdriver
 # 打开浏览器
@@ -94,7 +95,9 @@ move_to_element()# 鼠标悬停。
 # 关闭浏览器
 driver.close()
 ```
+
 ## 2. 页面等待
+
 ```python
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -103,16 +106,25 @@ element = WebDriverWait(driver, 5, 0.5).until(
                       EC.presence_of_element_located((By.ID, "kw"))
                       )
 ```
-**function**
-WebDriverWait(driver, timeout, poll_frequency=0.5, ignored_exceptions=None)
-driver ：浏览器驱动。
-timeout ：最长超时时间，默认以秒为单位。
-poll_frequency ：检测的间隔（步长）时间，默认为0.5S。
-ignored_exceptions ：超时后的异常信息，默认情况下抛NoSuchElementException异常。
+**函数**
 
-WebDriverWait()一般由until()或until_not()方法配合使用，下面是until()和until_not()方法的说明。
-until(method, message=‘’) 调用该方法提供的驱动程序作为一个参数，直到返回值为True。
-until_not(method, message=‘’) 调用该方法提供的驱动程序作为一个参数，直到返回值为False。
+```python
+WebDriverWait(
+    driver, # 浏览器驱动。
+    timeout, # 最长超时时间，默认以秒为单位。
+    poll_frequency=0.5, # 检测的间隔（步长）时间，默认为0.5S。
+    ignored_exceptions=None # 超时后的异常信息，默认情况下抛NoSuchElementException异常。
+    )
+"""
+WebDriverWait()一般由until()或until_not()方法配合使用，
+下面是until()和until_not()方法的说明。
+"""
+until(method, message=‘’) # 调用该方法提供的驱动程序作为一个参数，直到返回值为True。
+until_not(method, message=‘’) # 调用该方法提供的驱动程序作为一个参数，直到返回值为False。
+```
+
+**应用**
+
 ```python
 WebDriverWait(driver,10).until(EC.title_is(u"百度一下，你就知道"))
 # 判断title,返回布尔值
@@ -170,15 +182,20 @@ instance = WebDriverWait(driver,10).until(EC.alert_is_present())
 instance.accept()
 # 关闭弹窗
 ```
+
 ## 3. 警告框处理
+
 ```python
 alert = driver.switch_to_alert()
 ```
-text：返回 alert/confirm/prompt 中的文字信息。
-accept()：接受现有警告框。
-dismiss()：解散现有警告框。
-send_keys(keysToSend)：发送文本至警告框。keysToSend：将文本发送至警告框。
+
+text：返回 alert/confirm/prompt 中的文字信息。  
+accept()：接受现有警告框。  
+dismiss()：解散现有警告框。  
+send_keys(keysToSend)：发送文本至警告框。keysToSend：将文本发送至警告框。  
+
 ### 下拉框选择
+
 ```python
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
@@ -190,6 +207,7 @@ driver.get('http://www.baidu.com')
 sel = driver.find_element_by_xpath("//select[@id='nr']")
 Select(sel).select_by_value('50')  # 显示50条
 ```
+
 ## 4. cookie操作
 
 **selenium**
@@ -207,8 +225,11 @@ driver.delete_all_cookies()# 删除所有cookie信息
 for item in cookies:
     driver.add_cookie(item)
 ```
+
 **seleniumwire**
+
 seleniumwire有requests函数，可以获取用selenium获取不到的返回值
+
 ```python
 # 输出指定cookie
 for i in driver.requests:
@@ -218,7 +239,9 @@ for i in driver.requests:
             cookie = re.findall(r'(SESSION.*(?=;))', cookie)[0]
             self.cookies[i.headers['Host']] = cookie
 ```
+
 ## 5. 设置无界面
+
 ```python
 from selenium import webdriver # 模拟登录
 from selenium.webdriver.chrome.options import Options
