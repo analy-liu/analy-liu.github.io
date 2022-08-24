@@ -19,6 +19,9 @@ sheet_id = BB08J2
 ## 1.2 函数
 ```python
 def docqqAPI(table_id,sheet_id = None):
+    """
+    作者：AnalyZL（github:https://github.com/analy-liu)
+    """
     import time
     import pandas as pd
     import requests

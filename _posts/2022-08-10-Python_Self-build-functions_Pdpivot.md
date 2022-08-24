@@ -21,6 +21,9 @@ import pandas as pd
 import numpy as np
 class pdpivot(object):
     def __init__(self,df):
+        """
+        作者：AnalyZL（github:https://github.com/analy-liu)
+        """
         if str(type(df))=="<class 'pandas.core.frame.DataFrame'>":
             self.df = df.copy() # 建立副本，后续操作不改变原数据
         else:
