@@ -660,4 +660,9 @@ radar.show()
 
 ## 2. 交互：Pyecharts
 
+Pyecharts的教程请看下面两个：
 
+1. AwesomeTang写的pyecharts教程，很详细
+[【pyecharts教程】应该是全网最全的教程了～](https://www.heywhale.com/mw/project/5eb7958f366f4d002d783d4a)
+2. 本人自己写的简化函数
+[函数实现-pyecharts简化函数](../../../../2022/08/15/Python_Pyecharts.html)
