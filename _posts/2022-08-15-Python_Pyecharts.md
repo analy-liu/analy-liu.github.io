@@ -65,11 +65,25 @@ eplot.plot(x = df['日期'],y = df.iloc[:,1:],mode='1',Line_style=[{'width':5},{
 输出分为两部分，一是简化前用pyecharts要写的参数，二是可视化图  
 为了展示函数，使用了大多数参数，图片不太美观，实际使用时按需使用即可
 
-global_opts title_opts=opts.TitleOpts(title="主标题",subtitle="副标题",pos_left="center",title_textstyle_opts=opts.TextStyleOpts(color="black",font_size=30),),legend_opts=opts.LegendOpts(is_show=True,pos_right="10%",item_width=25,item_height=14),xaxis_opts=opts.AxisOpts(name="日期",splitarea_opts=opts.SplitAreaOpts(is_show=None,areastyle_opts=opts.AreaStyleOpts(opacity='0.6'))),yaxis_opts=opts.AxisOpts(is_scale=True,name="日期",splitarea_opts=opts.SplitAreaOpts(is_show=True,areastyle_opts=opts.AreaStyleOpts(opacity='0.6'))),visualmap_opts=opts.VisualMapOpts(is_show=True,type_="size",pos_right="3%",min_=99.15,max_=11148.02),datazoom_opts=[opts.DataZoomOpts(orient="vertical",range_start=0,range_end=100),opts.DataZoomOpts(range_start=0,range_end=100)],tooltip_opts=opts.TooltipOpts(is_show=True,trigger="axis",trigger_on="mousemove|click",axis_pointer_type="cross",border_width=0),
-series_opts label_opts=opts.LabelOpts(position="top",color="black",font_size=10),markpoint_opts=opts.MarkPointOpts(data=[opts.MarkPointItem(type_="max",name="最大值",symbol="arrow"),opts.MarkPointItem(type_="min",name="最小值")],symbol="pin",label_opts=opts.LabelOpts(is_show=False)),markline_opts=opts.MarkLineOpts(data=[opts.MarkLineItem(type_="average",name="平均值"),opts.MarkLineItem(y=10000)]),markarea_opts=opts.MarkAreaOpts(data=[opts.MarkAreaItem(x=('2021-07-01', '2021-07-05'),name="月初",itemstyle_opts=opts.ItemStyleOpts(color="red",opacity=0.1))])
+```python
+global_opts title_opts=opts.TitleOpts(
+    title="主标题",
+    subtitle="副标题",
+    pos_left="center",
+    title_textstyle_opts=opts.TextStyleOpts(color="black",font_size=30),),
+    legend_opts=opts.LegendOpts(is_show=True,pos_right="10%",item_width=25,item_height=14),
+    xaxis_opts=opts.AxisOpts(name="日期",splitarea_opts=opts.SplitAreaOpts(is_show=None,areastyle_opts=opts.AreaStyleOpts(opacity='0.6'))),
+    yaxis_opts=opts.AxisOpts(is_scale=True,name="日期",splitarea_opts=opts.SplitAreaOpts(is_show=True,areastyle_opts=opts.AreaStyleOpts(opacity='0.6'))),
+    visualmap_opts=opts.VisualMapOpts(is_show=True,type_="size",pos_right="3%",min_=99.15,max_=11148.02),
+    datazoom_opts=[opts.DataZoomOpts(orient="vertical",range_start=0,range_end=100),opts.DataZoomOpts(range_start=0,range_end=100)],
+    tooltip_opts=opts.TooltipOpts(is_show=True,trigger="axis",trigger_on="mousemove|click",axis_pointer_type="cross",border_width=0),
+    series_opts label_opts=opts.LabelOpts(position="top",color="black",font_size=10),
+    markpoint_opts=opts.MarkPointOpts(data=[opts.MarkPointItem(type_="max",name="最大值",symbol="arrow"),opts.MarkPointItem(type_="min",name="最小值")],symbol="pin",label_opts=opts.LabelOpts(is_show=False)),
+    markline_opts=opts.MarkLineOpts(data=[opts.MarkLineItem(type_="average",name="平均值"),opts.MarkLineItem(y=10000)]),
+    markarea_opts=opts.MarkAreaOpts(data=[opts.MarkAreaItem(x=('2021-07-01', '2021-07-05'),name="月初",itemstyle_opts=opts.ItemStyleOpts(color="red",opacity=0.1))])
+```
 
-
-![myecharts输出](https://github.com/analy-liu/PersonalImgaes/blob/main/images/Pyecharts_Example.png)
+![myecharts输出](https://raw.githubusercontent.com/analy-liu/PersonalImgaes/main/images/Pyecharts_Example.png)
 
 ## 3. 函数
 
