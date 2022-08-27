@@ -53,8 +53,8 @@ layout: default
 
 ## 4. 数据可视化
 
-- [ ] [pyecharts使用]
-- [ ] [函数实现-pyecharts易用版]
+- [x] [python-数据可视化](../../../../2022/08/15/Python_Matplotlib.html)
+- [x] [函数实现-pyecharts简化函数](../../../../2022/08/15/Python_Pyecharts.html)
 
 ## 5. 建模分析
 
