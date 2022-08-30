@@ -6,19 +6,23 @@ layout: default
 
 # 1. 字符串
 ## 1.1 字符串格式化
+
 ```python
 score = 100
 '{}{}'.format("成绩:", score)
 ----
 成绩:100
 ```
+
 ## 1.2 列表合并成字符串
+
 ```python
 list_str = ["成绩",100]
 ",".join(list_str)
 ----
 成绩,100
 ```
+
 # 2. 正则表达式
 ## 2.1 正则表达式基础语法
 
@@ -86,6 +90,7 @@ s: “."可以匹配“\n”
 在python中使用正则表达式，需要使用re模块。
 re模式会先编译正则表达式，如果正则表达式错误会报错
 使用格式：
+
 ```python
 # 开始
 import re
@@ -110,10 +115,7 @@ MatchObject.span()#返回匹配结果的位置范围
 ## 匹配
 re.match(pattern, string, flags)
 re.match(r'正则表达式', '待匹配的字符串', 修饰符)
-|修饰符|写法|描述|
-|:-|:-|:-|
-|多行模式|re.M|
-|单行模式|re.S|
+# 修饰符: 多行模式 re.M 单行模式 re.S
 """匹配成功返回一个MatchObject,不成功返回None"""
 ## 查找
 re.search(pattern, string, flags)
