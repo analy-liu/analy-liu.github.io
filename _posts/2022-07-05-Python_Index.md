@@ -94,3 +94,4 @@ pd.set_option('precision', 1)   # 设置显示数值的精度
 
 - [x] [pandas使用手册-总](../../../../2022/06/02/Python_Pandas_Note.html)
 - [x] [python内置函数整理](../../../../2022/08/03/Python-Built-in-functions_Note.html)
+- [x] [python环境配置](../../../../2022/09/16/Python_env.html)
