@@ -171,3 +171,6 @@ ERROR: Cannot uninstall 'terminado'. It is a distutils installed project and thu
 ```
 pip install terminado --ignore-installed
 ```
+
+如果jupyter首页为正常，打开ipynb文件报错500，尝试下面代码
+pip install --upgrade nbconvert

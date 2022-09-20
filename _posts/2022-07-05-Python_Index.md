@@ -19,11 +19,13 @@ layout: default
 
 ## 2. 数据清洗与特征工程
 
-数据清洗主要使用pandas进行增查删改的操作，有时也需要对文本进行清洗和提取
+数据清洗主要使用pandas进行增查删改的操作，有时也需要对文本进行清洗和提取  
+也常用sklearn中的Preprocessing方法清洗数据
 
 - [x] [pandas-增查删改](../../../../2022/08/04/Python_Pandas_CRUD.html)
 - [x] [python-字符串与正则表达式](../../../../2022/08/05/Python_Re_StrAndReg.html)
 - [x] [函数实现-vlookup](../../../../2022/08/06/Python_Self-build-functions_Nbvlookup.html)
+- [ ] [sklearn-数据清洗](../../../../2022/09/20/Python_SKlearn_Preprocessing.html)
 
 **增查删改内容目录**
 
