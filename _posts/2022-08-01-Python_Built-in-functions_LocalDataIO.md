@@ -245,4 +245,36 @@ f.close()
 </p>
 </details>
 
-## 5. [其他python内置函数](../../../../2022/08/03/Python-Built-in-functions_Note.html)
+## 5. os基础使用
+
+1. 获取文件夹下所有文件名称
+
+  方法一：listdir，得到的是仅当前路径下的文件名，不包括子目录中的文件  
+
+  ```python
+  import os
+  os.listdir(path)
+  ```
+
+  方法二：os.walk(top, topdown=Ture, onerror=None, followlinks=False)   
+
+  可以得到一个三元元组(dirpath, dirnames, filenames)  
+  dirpath：表示获取的目录的路径，以string形式返回值  
+  dirnames： 包含了当前dirpath路径下所有的子目录名字  
+
+  ```python
+  os.walk(path)
+  f = os.walk(path)
+  for dirpath,dirnames,filenames in f:
+      print(dirpath)
+      print(dirnames)
+      print(filenames)
+  ```
+
+  ps.os.path.splitext()函数将路径拆分为文件名+扩展名（后缀）
+  ```python
+  os.path.splitext(filenames[0])
+  >>> ('D:\\data\test', '.xlsx')
+  ```
+
+## 6. [其他python内置函数](../../../../2022/08/03/Python-Built-in-functions_Note.html)

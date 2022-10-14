@@ -46,6 +46,12 @@ layout: default
    - 空值处理
    - 值修改
 
+**jupyter notebook显示宽度设置**
+```
+from IPython.core.display import display, HTML
+display(HTML("<style>.container { width:85% !important; }</style>"))
+```
+
 **pd.set_option()：显示多行多列 调整精度**  
 
 ```

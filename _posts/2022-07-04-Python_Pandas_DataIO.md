@@ -293,6 +293,7 @@ s.to_frame()
         data.to_excel(excel_writer=writer, sheet_name=sheet_name,  index=index)
         writer.save()
     ```
+    使用
     ```python
    target_path = r"F:\data\test\中文路径\测试数据.xlsx"
    nb_to_excel(target_path, df,'Sheet1')
@@ -383,3 +384,42 @@ s.to_frame()
    method=None，导入方法{None, 'multi', callable}<br>
    </p>
    </details>
+
+## 5. 多表信息查看与导入
+
+有时我们会需要读取文件夹下所有excel，每个excel里还有多个sheet，当数量多时，想要快速掌握这些excel的基本信息，一个个单独查看效率比较低，把所有表信息与内容汇总到一张表里，就能快速了解各表数据结构、大小，来进行下一步的数据处理。
+
+```python
+import pandas as pd
+import os
+def summary_filexlsx_info(path):
+    # 将多个excel中sheet读取到一张表中，展示信息
+    filenames = os.listdir(path)
+    sheet_info_list = []
+    for index,item in enumerate(filenames):
+        sheet_index = 0
+        # 遍历sheet
+        while True:
+            try:
+                # sheet存在，则保存到df
+                df = pd.read_excel('{}\\{}'.format(path,item),sheet_name=sheet_index)
+                if df.shape == (0,0):
+                    break # 空sheet则退出，不录入信息
+            except:
+                break # sheet不存在则退出while循环
+            else:
+                # 构建每个sheet的信息
+                sheet_info_temp = [item,index,sheet_index,df.shape[0],df.shape[1],df.columns.tolist(),type(df.columns.tolist()[0]),df.dtypes.to_dict(),df.to_dict()]
+                sheet_info_list.append(sheet_info_temp)
+                sheet_index+=1
+    return pd.DataFrame(data=sheet_info_list,columns=['表名','表ID','sheet序号','行','列','表头','表头类型','数据类型','数据'])
+```
+
+使用
+
+```python
+path = r"D:\data"
+df_info = summary_filexlsx_info(path)
+# 查看具体表数据
+pd.DataFrame(df_info.loc[0,'数据'])
+```

@@ -58,6 +58,7 @@ conda upgrade --all
 conda search matplotlib
 # 安装包
 conda install package
+conda install -c conda-forge package
 # 更新包
 conda update package
 # 查看现有包版本
