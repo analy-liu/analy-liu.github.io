@@ -115,14 +115,21 @@ MatchObject.span()#返回匹配结果的位置范围
 ## 匹配
 re.match(pattern, string, flags)
 re.match(r'正则表达式', '待匹配的字符串', 修饰符)
-# 修饰符: 多行模式 re.M 单行模式 re.S
+# 修饰符: 多行模式 re.M 单行模式 re.S 忽略大小写 re.l 忽略空格和#后面的注释 
+# re.L表示特殊字符集依赖当前环境 re.U 表示特殊字符集依赖于Unicode字符属性数据库(\w \W \b \B \d \D \s \S)
 """匹配成功返回一个MatchObject,不成功返回None"""
 ## 查找
 re.search(pattern, string, flags)
 """查找匹配的第一个
 如果查找到则返回查找到的值，否则返回为None。"""
 re.findall(pattern, string, flags)
-"""以列表格式返回所有匹配内容"""
+"""以列表格式返回所有匹配内容,注意在有分组时，即正则中有括号的情况
+当只有一个分组，就只匹配分组里面的内容，然后返回列表
+如果多个分组，就把每个分组看成一个单位，返回一个含有多个元组的列表
+在python中，但一个分组头部出现 ?: 时，表示这是一个非捕获分组，正常进行匹配，不作为独立结果输出
+"""
+re.finditer # 会返回一个迭代器
+[i.group() for i in re.finditer(pattern, string, flags)]
 ## 拆分
 re.spilt(r'正则表达式', '待拆分的字符串')
 ## 替换
